@@ -1,0 +1,16 @@
+# kind-cluster.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: aiops-cluster
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080 # Para acceder a la app (Online Boutique)
+        hostPort: 8080
+        protocol: TCP
+      - containerPort: 30090 # Para acceder a Prometheus/Grafana si deseas
+        hostPort: 9090
+        protocol: TCP
+  - role: worker
+  - role: worker
+  
