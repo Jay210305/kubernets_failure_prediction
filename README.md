@@ -1,5 +1,7 @@
 # Microservices Fault Prediction - Local Setup Guide
 
+This repository is a research workspace for forecasting microservice failures from telemetry. Start with [AGENTS.md](AGENTS.md) for agent navigation, [docs/PROJECT_SCOPE.md](docs/PROJECT_SCOPE.md) for the research question, [docs/BASELINE_AUDIT.md](docs/BASELINE_AUDIT.md) for current data readiness, and [docs/LITERATURE_MAP.md](docs/LITERATURE_MAP.md) for the initial paper map. The hand-maintained [ICM system map](map/CONTEXT.md) and generated [graphify report](graphify-out/GRAPH_REPORT.md) describe the present code and research structure. The baseline capture is all zero and must not be used to train a failure predictor.
+
 This guide provides step-by-step instructions to set up the local Kubernetes environment using `kind`, deploy Google's Online Boutique microservices demo, and install the Prometheus/Grafana monitoring stack on Windows.
 
 > **Note on Ports:** Standard ports like `8080` may be occupied by Docker Desktop or other Windows background services. This guide uses alternative host ports (e.g., `8085` for the Boutique Frontend).
