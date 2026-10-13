@@ -1,0 +1,61 @@
+{
+  "cluster_context": "kind-aiops-cluster",
+  "cluster_config_revision": "33207fe75c7aa89882307bfd760ba48c3a35abaceff47c60da2839f8472927a5",
+  "cluster_evidence": "google_boutique\\runs\\phase04-20261011T021025Z-evidence",
+  "workload": {
+    "generator": "existing deployment/loadgenerator",
+    "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/loadgenerator:v0.10.6",
+    "env": [
+      {
+        "name": "FRONTEND_ADDR",
+        "value": "frontend:80"
+      },
+      {
+        "name": "USERS",
+        "value": "10"
+      },
+      {
+        "name": "RATE",
+        "value": "1"
+      }
+    ],
+    "configured_replicas": 1,
+    "available_replicas": 1,
+    "log_first_utc": "2026-10-11T02:09:36.001948162Z",
+    "log_last_utc": "2026-10-11T02:10:28.058023534Z",
+    "evidence_paths": [
+      "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\workload_logs.json",
+      "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\deployments.json"
+    ],
+    "verified_start_utc": null,
+    "verified_end_utc": null,
+    "note": "Configuration plus observed logs; inspect timestamps for capture-wide workload support."
+  },
+  "scrape_interval_evidence": "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\targets.json",
+  "prior_baseline_hashes": {
+    "baseline_run_01.csv": "7acdb6a70cca27e5feeec2906f95b73d56ba5a802cbdc01a315480b1d6469d65",
+    "baseline_run_01.parquet": "9b5c3ec34d467f23bdb352edf92e61d43ce507fd8f5771d0dfb8815970cfbce5"
+  },
+  "evidence_artifacts": [
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\deployments.json",
+      "sha256": "8cf68b025d2245ba93d9f1ffbf5b0cd06d5caeeb3f5f76ae904342ec3f47d5cf"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\nodes.json",
+      "sha256": "3975f80fcb4befd749e5ee68a1e16c4fcffd6a6d76bb823c846c7630b2fdfa75"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\pods.json",
+      "sha256": "46cb9ee08aa4317493c1d5d41ce312eeba50ba866d22367c50f37effa0300a58"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\targets.json",
+      "sha256": "f93cbea5ade615455b662e8ba60f999adb3654ef57a5cc62c2a645466a92bb79"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021025Z-evidence\\workload_logs.json",
+      "sha256": "d2a340c2d7dc112ff4f48e9785dc408a0db95c1eab4bf5fa54b95df49b07883a"
+    }
+  ]
+}

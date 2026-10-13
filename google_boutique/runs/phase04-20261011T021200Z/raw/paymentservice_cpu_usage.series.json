@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791684090.0,
+    "end": 1791684690.0
+  },
+  "requested_at": "2026-10-11T02:12:10.356189+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_cpu_usage_seconds_total\",\"container\":\"server\",\"cpu\":\"total\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod6f073c54_a42a_463b_9c49_fabd308523e2.slice/cri-containerd-f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702.scope\",\"image\":\"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/paymentservice:v0.10.6\",\"instance\":\"172.18.0.3:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker2\",\"pod\":\"paymentservice-5df7f57d78-82x4m\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_cpu_usage_seconds_total",
+        "container": "server",
+        "cpu": "total",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod6f073c54_a42a_463b_9c49_fabd308523e2.slice/cri-containerd-f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702.scope",
+        "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/paymentservice:v0.10.6",
+        "instance": "172.18.0.3:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker2",
+        "pod": "paymentservice-5df7f57d78-82x4m",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:12:10.366657+00:00"
+}

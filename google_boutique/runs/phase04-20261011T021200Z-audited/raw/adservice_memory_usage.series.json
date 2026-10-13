@@ -1,0 +1,32 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791684090.0,
+    "end": 1791684690.0
+  },
+  "requested_at": "2026-10-11T02:16:39.535038+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_memory_working_set_bytes\",\"container\":\"server\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-poddb85d284_2f9f_4bd7_b301_9b7c786f18fa.slice/cri-containerd-f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9.scope\",\"image\":\"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/adservice:v0.10.6\",\"instance\":\"172.18.0.3:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker2\",\"pod\":\"adservice-748f6f68d4-vc8g2\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_memory_working_set_bytes",
+        "container": "server",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-poddb85d284_2f9f_4bd7_b301_9b7c786f18fa.slice/cri-containerd-f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9.scope",
+        "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/adservice:v0.10.6",
+        "instance": "172.18.0.3:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker2",
+        "pod": "adservice-748f6f68d4-vc8g2",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:16:39.544467+00:00"
+}

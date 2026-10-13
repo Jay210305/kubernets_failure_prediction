@@ -1,0 +1,16 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "http_requests_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",status=~\"5..\"}",
+    "start": 1791683995.0,
+    "end": 1791684595.0
+  },
+  "requested_at": "2026-10-11T02:10:36.579427+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[]}",
+  "payload": {
+    "status": "success",
+    "data": []
+  },
+  "received_at": "2026-10-11T02:10:36.606464+00:00"
+}

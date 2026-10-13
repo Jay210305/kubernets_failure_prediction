@@ -1,0 +1,1902 @@
+{
+  "capture": "phase04-20261011T021200Z-audited",
+  "measurement_readiness": "fail",
+  "quality_code_sha256": "1d6a714af405bba6d5bbbee127501a6f1e47a440a7bd592ead0762ebb6605cec",
+  "quality_source_snapshot": "quality-source-1d6a714af405.py",
+  "training_readiness": "not-ready: missing event oracle/episodes, topology acceptance and historical availability",
+  "rows": 121,
+  "columns": 55,
+  "csv_parquet_parity": true,
+  "mask_parity": true,
+  "mask_consistent": true,
+  "utc_grid_matches": true,
+  "artifact_integrity": true,
+  "provenance_integrity": true,
+  "evidence_artifacts": [
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\deployments.json",
+      "hash_matches": true
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\nodes.json",
+      "hash_matches": true
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\pods.json",
+      "hash_matches": true
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\targets.json",
+      "hash_matches": true
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\workload_logs.json",
+      "hash_matches": true
+    }
+  ],
+  "workload_covers_capture": true,
+  "failed_required_columns": [
+    "frontend_cpu_usage",
+    "frontend_memory_usage",
+    "frontend_network_rx",
+    "frontend_network_tx",
+    "cartservice_cpu_usage",
+    "cartservice_memory_usage",
+    "cartservice_network_rx",
+    "cartservice_network_tx",
+    "productcatalogservice_cpu_usage",
+    "productcatalogservice_memory_usage",
+    "productcatalogservice_network_rx",
+    "productcatalogservice_network_tx",
+    "currencyservice_cpu_usage",
+    "currencyservice_memory_usage",
+    "currencyservice_network_rx",
+    "currencyservice_network_tx",
+    "paymentservice_cpu_usage",
+    "paymentservice_memory_usage",
+    "paymentservice_network_rx",
+    "paymentservice_network_tx",
+    "shippingservice_cpu_usage",
+    "shippingservice_memory_usage",
+    "shippingservice_network_rx",
+    "shippingservice_network_tx",
+    "emailservice_cpu_usage",
+    "emailservice_memory_usage",
+    "emailservice_network_rx",
+    "emailservice_network_tx",
+    "checkoutservice_cpu_usage",
+    "checkoutservice_memory_usage",
+    "checkoutservice_network_rx",
+    "checkoutservice_network_tx",
+    "recommendationservice_cpu_usage",
+    "recommendationservice_memory_usage",
+    "recommendationservice_network_rx",
+    "recommendationservice_network_tx",
+    "adservice_cpu_usage",
+    "adservice_memory_usage",
+    "adservice_network_rx",
+    "adservice_network_tx",
+    "redis-cart_cpu_usage",
+    "redis-cart_memory_usage",
+    "redis-cart_network_rx",
+    "redis-cart_network_tx"
+  ],
+  "series": [
+    {
+      "column": "frontend_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 102,
+      "coverage": 0.8429752066115702,
+      "missing": 19,
+      "nonzero": 102,
+      "distinct": 61,
+      "min": 0.005848183112919479,
+      "max": 0.016440939055562993,
+      "maximum_source_age_s": 18.566999912261963,
+      "fresh_coverage": 0.6446280991735537,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "frontend_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 39,
+      "min": 10551296.0,
+      "max": 13897728.0,
+      "maximum_source_age_s": 18.566999912261963,
+      "fresh_coverage": 0.6446280991735537,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "frontend_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 112,
+      "coverage": 0.9256198347107438,
+      "missing": 9,
+      "nonzero": 112,
+      "distinct": 71,
+      "min": 5279.6086775759995,
+      "max": 15409.189957366176,
+      "maximum_source_age_s": 18.000999927520752,
+      "fresh_coverage": 0.6942148760330579,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "frontend_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 112,
+      "coverage": 0.9256198347107438,
+      "missing": 9,
+      "nonzero": 112,
+      "distinct": 71,
+      "min": 16710.16026408568,
+      "max": 44953.197536712454,
+      "maximum_source_age_s": 18.000999927520752,
+      "fresh_coverage": 0.6942148760330579,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "frontend_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "cartservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 103,
+      "coverage": 0.8512396694214877,
+      "missing": 18,
+      "nonzero": 103,
+      "distinct": 65,
+      "min": 0.0023331539955814234,
+      "max": 0.005648475724501284,
+      "maximum_source_age_s": 18.44700002670288,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "cartservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 39,
+      "min": 51634176.0,
+      "max": 53833728.0,
+      "maximum_source_age_s": 18.44700002670288,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "cartservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 107,
+      "coverage": 0.8842975206611571,
+      "missing": 14,
+      "nonzero": 107,
+      "distinct": 67,
+      "min": 762.837962870546,
+      "max": 1863.6609233355346,
+      "maximum_source_age_s": 18.367000102996826,
+      "fresh_coverage": 0.6694214876033058,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "cartservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 107,
+      "coverage": 0.8842975206611571,
+      "missing": 14,
+      "nonzero": 107,
+      "distinct": 68,
+      "min": 750.0108161160462,
+      "max": 1874.6167995095034,
+      "maximum_source_age_s": 18.367000102996826,
+      "fresh_coverage": 0.6694214876033058,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "cartservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "productcatalogservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 112,
+      "coverage": 0.9256198347107438,
+      "missing": 9,
+      "nonzero": 112,
+      "distinct": 77,
+      "min": 0.002216514026806024,
+      "max": 0.008742288361091992,
+      "maximum_source_age_s": 18.729000091552734,
+      "fresh_coverage": 0.6859504132231405,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "productcatalogservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 38,
+      "min": 8691712.0,
+      "max": 10891264.0,
+      "maximum_source_age_s": 18.729000091552734,
+      "fresh_coverage": 0.6859504132231405,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "productcatalogservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 116,
+      "coverage": 0.9586776859504132,
+      "missing": 5,
+      "nonzero": 116,
+      "distinct": 80,
+      "min": 2148.7222572202436,
+      "max": 6916.086321038603,
+      "maximum_source_age_s": 17.698999881744385,
+      "fresh_coverage": 0.71900826446281,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "productcatalogservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 116,
+      "coverage": 0.9586776859504132,
+      "missing": 5,
+      "nonzero": 116,
+      "distinct": 78,
+      "min": 4686.209824919259,
+      "max": 14104.978075831828,
+      "maximum_source_age_s": 17.698999881744385,
+      "fresh_coverage": 0.71900826446281,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "productcatalogservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "currencyservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 101,
+      "coverage": 0.8347107438016529,
+      "missing": 20,
+      "nonzero": 101,
+      "distinct": 61,
+      "min": 0.004748748062893159,
+      "max": 0.015993145950927316,
+      "maximum_source_age_s": 18.41599988937378,
+      "fresh_coverage": 0.6363636363636364,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "currencyservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 38,
+      "min": 37289984.0,
+      "max": 39235584.0,
+      "maximum_source_age_s": 18.41599988937378,
+      "fresh_coverage": 0.6363636363636364,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "currencyservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 107,
+      "coverage": 0.8842975206611571,
+      "missing": 14,
+      "nonzero": 107,
+      "distinct": 64,
+      "min": 1406.3051691802766,
+      "max": 3722.689075630252,
+      "maximum_source_age_s": 19.311000108718872,
+      "fresh_coverage": 0.6446280991735537,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "currencyservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 107,
+      "coverage": 0.8842975206611571,
+      "missing": 14,
+      "nonzero": 107,
+      "distinct": 65,
+      "min": 1554.9104868328513,
+      "max": 3951.0084033613443,
+      "maximum_source_age_s": 19.311000108718872,
+      "fresh_coverage": 0.6446280991735537,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "currencyservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "paymentservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 101,
+      "coverage": 0.8347107438016529,
+      "missing": 20,
+      "nonzero": 101,
+      "distinct": 56,
+      "min": 0.0002191865535595471,
+      "max": 0.001353016473731076,
+      "maximum_source_age_s": 18.59599995613098,
+      "fresh_coverage": 0.6363636363636364,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "paymentservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 37,
+      "min": 26976256.0,
+      "max": 29818880.0,
+      "maximum_source_age_s": 18.59599995613098,
+      "fresh_coverage": 0.6363636363636364,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "paymentservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 112,
+      "coverage": 0.9256198347107438,
+      "missing": 9,
+      "nonzero": 112,
+      "distinct": 79,
+      "min": 117.0486536107711,
+      "max": 314.02038132807365,
+      "maximum_source_age_s": 19.39400005340576,
+      "fresh_coverage": 0.7024793388429752,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "paymentservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 112,
+      "coverage": 0.9256198347107438,
+      "missing": 9,
+      "nonzero": 112,
+      "distinct": 79,
+      "min": 85.55699204406363,
+      "max": 249.71815107102594,
+      "maximum_source_age_s": 19.39400005340576,
+      "fresh_coverage": 0.7024793388429752,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "paymentservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "shippingservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 110,
+      "coverage": 0.9090909090909091,
+      "missing": 11,
+      "nonzero": 110,
+      "distinct": 70,
+      "min": 0.0003745041923551166,
+      "max": 0.001195874934314237,
+      "maximum_source_age_s": 16.292999982833862,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "shippingservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 28,
+      "min": 7290880.0,
+      "max": 8355840.0,
+      "maximum_source_age_s": 16.292999982833862,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "shippingservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 104,
+      "coverage": 0.859504132231405,
+      "missing": 17,
+      "nonzero": 104,
+      "distinct": 67,
+      "min": 350.9238776167472,
+      "max": 1086.868330540612,
+      "maximum_source_age_s": 17.486000061035156,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "shippingservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 104,
+      "coverage": 0.859504132231405,
+      "missing": 17,
+      "nonzero": 104,
+      "distinct": 68,
+      "min": 234.9444122383253,
+      "max": 757.2096304788781,
+      "maximum_source_age_s": 17.486000061035156,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "shippingservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "emailservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 106,
+      "coverage": 0.8760330578512396,
+      "missing": 15,
+      "nonzero": 106,
+      "distinct": 68,
+      "min": 0.001609315123863296,
+      "max": 0.003021468441391138,
+      "maximum_source_age_s": 19.348000049591064,
+      "fresh_coverage": 0.6611570247933884,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "emailservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 17,
+      "min": 38789120.0,
+      "max": 39841792.0,
+      "maximum_source_age_s": 19.348000049591064,
+      "fresh_coverage": 0.6611570247933884,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "emailservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 111,
+      "coverage": 0.9173553719008265,
+      "missing": 10,
+      "nonzero": 111,
+      "distinct": 76,
+      "min": 245.13725318670333,
+      "max": 622.4653683999197,
+      "maximum_source_age_s": 18.907999992370605,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "emailservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 111,
+      "coverage": 0.9173553719008265,
+      "missing": 10,
+      "nonzero": 111,
+      "distinct": 75,
+      "min": 197.27630592351912,
+      "max": 470.52673904302367,
+      "maximum_source_age_s": 18.907999992370605,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "emailservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "checkoutservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 112,
+      "coverage": 0.9256198347107438,
+      "missing": 9,
+      "nonzero": 112,
+      "distinct": 75,
+      "min": 0.00014377187162655346,
+      "max": 0.00165573646346081,
+      "maximum_source_age_s": 18.766000032424927,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "checkoutservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 26,
+      "min": 6877184.0,
+      "max": 8712192.0,
+      "maximum_source_age_s": 18.766000032424927,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "checkoutservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 106,
+      "coverage": 0.8760330578512396,
+      "missing": 15,
+      "nonzero": 106,
+      "distinct": 72,
+      "min": 121.19772668672111,
+      "max": 1285.4805435014582,
+      "maximum_source_age_s": 18.484999895095825,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "checkoutservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 106,
+      "coverage": 0.8760330578512396,
+      "missing": 15,
+      "nonzero": 106,
+      "distinct": 70,
+      "min": 77.72651912333478,
+      "max": 1321.9748168172441,
+      "maximum_source_age_s": 18.484999895095825,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "checkoutservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "recommendationservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 106,
+      "coverage": 0.8760330578512396,
+      "missing": 15,
+      "nonzero": 106,
+      "distinct": 62,
+      "min": 0.004493249518688194,
+      "max": 0.008550847913862736,
+      "maximum_source_age_s": 18.66100001335144,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "recommendationservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 30,
+      "min": 39555072.0,
+      "max": 41381888.0,
+      "maximum_source_age_s": 18.66100001335144,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "recommendationservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 104,
+      "coverage": 0.859504132231405,
+      "missing": 17,
+      "nonzero": 104,
+      "distinct": 58,
+      "min": 2486.1252729257635,
+      "max": 5672.444039014806,
+      "maximum_source_age_s": 17.967000007629395,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "recommendationservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 104,
+      "coverage": 0.859504132231405,
+      "missing": 17,
+      "nonzero": 104,
+      "distinct": 58,
+      "min": 902.6570536147499,
+      "max": 1825.943712307349,
+      "maximum_source_age_s": 17.967000007629395,
+      "fresh_coverage": 0.6528925619834711,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "recommendationservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "adservice_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 113,
+      "coverage": 0.9338842975206612,
+      "missing": 8,
+      "nonzero": 113,
+      "distinct": 78,
+      "min": 0.0011995384090976663,
+      "max": 0.013763486206290625,
+      "maximum_source_age_s": 19.618000030517578,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "adservice_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 40,
+      "min": 100786176.0,
+      "max": 102252544.0,
+      "maximum_source_age_s": 19.618000030517578,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "adservice_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 108,
+      "coverage": 0.8925619834710744,
+      "missing": 13,
+      "nonzero": 108,
+      "distinct": 79,
+      "min": 340.20067098488624,
+      "max": 850.1523726599913,
+      "maximum_source_age_s": 18.177000045776367,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "adservice_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 108,
+      "coverage": 0.8925619834710744,
+      "missing": 13,
+      "nonzero": 108,
+      "distinct": 79,
+      "min": 289.7066616841056,
+      "max": 701.6978667827601,
+      "maximum_source_age_s": 18.177000045776367,
+      "fresh_coverage": 0.6776859504132231,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "adservice_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    },
+    {
+      "column": "redis-cart_cpu_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 107,
+      "coverage": 0.8842975206611571,
+      "missing": 14,
+      "nonzero": 107,
+      "distinct": 65,
+      "min": 0.0014548510924872785,
+      "max": 0.002591170030182894,
+      "maximum_source_age_s": 18.80999994277954,
+      "fresh_coverage": 0.6611570247933884,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "redis-cart_memory_usage",
+      "required": true,
+      "expected": 121,
+      "observed": 121,
+      "coverage": 1.0,
+      "missing": 0,
+      "nonzero": 121,
+      "distinct": 12,
+      "min": 9977856.0,
+      "max": 11280384.0,
+      "maximum_source_age_s": 18.80999994277954,
+      "fresh_coverage": 0.6611570247933884,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "redis-cart_network_rx",
+      "required": true,
+      "expected": 121,
+      "observed": 111,
+      "coverage": 0.9173553719008265,
+      "missing": 10,
+      "nonzero": 111,
+      "distinct": 79,
+      "min": 271.9828089025326,
+      "max": 929.6085409252668,
+      "maximum_source_age_s": 18.95300006866455,
+      "fresh_coverage": 0.7024793388429752,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "redis-cart_network_tx",
+      "required": true,
+      "expected": 121,
+      "observed": 111,
+      "coverage": 0.9173553719008265,
+      "missing": 10,
+      "nonzero": 111,
+      "distinct": 78,
+      "min": 147.58158096699924,
+      "max": 560.2773026019628,
+      "maximum_source_age_s": 18.95300006866455,
+      "fresh_coverage": 0.7024793388429752,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)"
+      ]
+    },
+    {
+      "column": "redis-cart_http_errors",
+      "required": false,
+      "expected": 121,
+      "observed": 0,
+      "coverage": 0.0,
+      "missing": 121,
+      "nonzero": 0,
+      "distinct": 0,
+      "min": null,
+      "max": null,
+      "maximum_source_age_s": null,
+      "fresh_coverage": 0.0,
+      "query_failures": [],
+      "verdict": "fail",
+      "reasons": [
+        "coverage below 95%",
+        "fresh coverage below 95% (10s maximum age)",
+        "no observed nonzero measurement",
+        "constant series; workload evidence insufficient"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "available_at.parquet",
+      "hash_matches": true
+    },
+    {
+      "path": "collector-source.py",
+      "hash_matches": true
+    },
+    {
+      "path": "observed.csv",
+      "hash_matches": true
+    },
+    {
+      "path": "observed.parquet",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/adservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/cartservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/currencyservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/emailservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/frontend_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/paymentservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/prometheus-buildinfo.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/prometheus-config.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/prometheus-targets.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/redis-cart_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_http_errors.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_http_errors.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_http_errors.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_network_rx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_network_rx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_network_rx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_network_tx.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_network_tx.series.json",
+      "hash_matches": true
+    },
+    {
+      "path": "raw/shippingservice_network_tx.source-time.json",
+      "hash_matches": true
+    },
+    {
+      "path": "source_times.parquet",
+      "hash_matches": true
+    },
+    {
+      "path": "values.csv",
+      "hash_matches": true
+    },
+    {
+      "path": "values.parquet",
+      "hash_matches": true
+    }
+  ],
+  "limits": [
+    "Query evaluation timestamps are not scrape timestamps; source ages are reported separately.",
+    "Retrospective receipt times do not prove historical inference availability.",
+    "Clock synchronization and replica/network aggregation still require review."
+  ]
+}

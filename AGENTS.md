@@ -11,6 +11,7 @@ This repository studies advance prediction of failures in a microservice applica
 | Review prior work or add a paper | [docs/LITERATURE_MAP.md](docs/LITERATURE_MAP.md), then `.agents/skills/review-paper/SKILL.md` |
 | Inspect telemetry or change extraction | [docs/BASELINE_AUDIT.md](docs/BASELINE_AUDIT.md), then `.agents/skills/audit-telemetry/SKILL.md` |
 | Design a prediction experiment | [docs/PROJECT_SCOPE.md](docs/PROJECT_SCOPE.md) and [docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md) |
+| Follow the project phases and task to-dos | [docs/PROJECT_EXECUTION_PLAN.md](docs/PROJECT_EXECUTION_PLAN.md), then [docs/project-phases/CONTEXT.md](docs/project-phases/CONTEXT.md) |
 | Set up the demo cluster | [README.md](README.md) and `google_boutique/kind-cluster.yaml` |
 | Decide whether to delegate or use integrations | [docs/AGENT_WORKFLOW.md](docs/AGENT_WORKFLOW.md) |
 

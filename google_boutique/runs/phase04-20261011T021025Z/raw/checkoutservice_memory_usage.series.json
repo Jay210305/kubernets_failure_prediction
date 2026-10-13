@@ -1,0 +1,32 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791683995.0,
+    "end": 1791684595.0
+  },
+  "requested_at": "2026-10-11T02:10:42.415821+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_memory_working_set_bytes\",\"container\":\"server\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod9494ee17_b9c5_43d4_8cd9_58ea8cc2f658.slice/cri-containerd-28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7.scope\",\"image\":\"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/checkoutservice:v0.10.6\",\"instance\":\"172.18.0.4:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker\",\"pod\":\"checkoutservice-8458467c66-l5rdb\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_memory_working_set_bytes",
+        "container": "server",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod9494ee17_b9c5_43d4_8cd9_58ea8cc2f658.slice/cri-containerd-28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7.scope",
+        "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/checkoutservice:v0.10.6",
+        "instance": "172.18.0.4:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker",
+        "pod": "checkoutservice-8458467c66-l5rdb",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:10:42.432698+00:00"
+}

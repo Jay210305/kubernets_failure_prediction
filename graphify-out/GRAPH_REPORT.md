@@ -1,48 +1,70 @@
-# Graph Report - Microservices_fault_preditcion  (2026-10-06)
+# Graph Report - google_boutique  (2026-10-10)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 3 files · ~1,914 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 15 nodes · 17 edges · 3 communities (0 shown, 3 thin omitted)
+- 35 nodes · 72 edges · 7 communities (2 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
-## Graph Freshness
-- Built from commit: `32db139f`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
-
 ## Community Hubs (Navigation)
+- Community 0
 - Community 1
-- Community 2
+- Community 3
+- Community 4
+- Community 5
+- Community 6
 
 ## God Nodes (most connected - your core abstractions)
-1. `extract_dataset()` - 5 edges
-2. `build_spatiotemporal_tensor()` - 4 edges
-3. `query_prometheus_range()` - 3 edges
-4. `Ejecuta una consulta al endpoint query_range de Prometheus.` - 1 edges
-5. `Extrae las series temporales de todos los servicios y métricas, alineando…` - 1 edges
-6. `Convierte el DataFrame (T, 55) en un tensor 3D de ventanas deslizantes con…` - 1 edges
+1. `capture()` - 13 edges
+2. `main()` - 6 edges
+3. `api_record()` - 5 edges
+4. `range_values()` - 5 edges
+5. `build_spatiotemporal_tensor()` - 5 edges
+6. `quality_report()` - 5 edges
+7. `utc()` - 4 edges
+8. `source_selectors()` - 4 edges
+9. `query_prometheus_range()` - 4 edges
+10. `extract_dataset()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `extract_dataset()` --references--> `DataFrame`  [EXTRACTED]
-  extract_telemetry.py →   _Bridges community 1 → community 2_
+- `capture()` --calls--> `utc()`  [EXTRACTED]
+  telemetry_capture.py → telemetry_capture.py  _Bridges community 4 → community 3_
+- `utc()` --calls--> `pandas`  [EXTRACTED]
+  telemetry_capture.py →   _Bridges community 4 → community 1_
+- `source_selectors()` --calls--> `json`  [EXTRACTED]
+  telemetry_capture.py →   _Bridges community 3 → community 6_
+- `capture()` --calls--> `api_record()`  [EXTRACTED]
+  telemetry_capture.py → telemetry_capture.py  _Bridges community 0 → community 3_
+- `capture()` --calls--> `range_values()`  [EXTRACTED]
+  telemetry_capture.py → telemetry_capture.py  _Bridges community 5 → community 3_
 
 ## Import Cycles
 - None detected.
 
-## Communities (3 total, 3 thin omitted)
+## Communities (7 total, 5 thin omitted)
+
+### Community 0 - "Community 0"
+Cohesion: 0.22
+Nodes (3): api_record(), extract_dataset(), query_prometheus_range()
+
+### Community 3 - "Community 3"
+Cohesion: 0.50
+Nodes (3): capture(), metric_queries(), source_selectors()
 
 ## Knowledge Gaps
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `build_spatiotemporal_tensor()` connect `Community 2` to `Community 0`?**
-  _High betweenness centrality (0.308) - this node is a cross-community bridge._
-- **Why does `extract_dataset()` connect `Community 1` to `Community 0`, `Community 2`?**
-  _High betweenness centrality (0.220) - this node is a cross-community bridge._
-- **Why does `query_prometheus_range()` connect `Community 1` to `Community 0`?**
-  _High betweenness centrality (0.143) - this node is a cross-community bridge._
+- **Why does `capture()` connect `Community 3` to `Community 0`, `Community 1`, `Community 2`, `Community 4`, `Community 5`, `Community 6`?**
+  _High betweenness centrality (0.094) - this node is a cross-community bridge._
+- **Why does `build_spatiotemporal_tensor()` connect `Community 1` to `Community 0`, `Community 2`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `api_record()` connect `Community 0` to `Community 2`, `Community 3`?**
+  _High betweenness centrality (0.063) - this node is a cross-community bridge._
+
+Scope: three telemetry Python modules only. Papers, raw captures, event labels and deployed topology are excluded. Source files have local uncommitted changes; compare telemetry-source-hashes.json, not commit identity alone, for freshness.

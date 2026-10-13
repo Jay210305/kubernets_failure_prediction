@@ -15,6 +15,8 @@ The repeatable unit of work is a **prediction experiment**: a defined fault even
 
 Stable references live in `docs/`, `.agents/skills/`, and `map/`. Existing run artifacts live under `google_boutique/`; raw papers remain in `Bibliografia_Micro/`. The source files stay in place. Derived experiment outputs should get their own dated run directory when that stage begins.
 
+The work is decomposed into numbered phases, task summaries, and to-dos in [docs/PROJECT_EXECUTION_PLAN.md](docs/PROJECT_EXECUTION_PLAN.md). That navigation refines the sequence above; [docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md) remains the canonical gate list.
+
 For each step, an agent reads only its contract, the linked sources, and its working input. A human reviews the resulting question, data audit, or experiment report before it becomes the next step's premise. The presence of an output file records progress; an unreviewed output is still a draft.
 
 | Step | Working input | Output | Human check |

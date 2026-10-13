@@ -1,0 +1,32 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791684090.0,
+    "end": 1791684690.0
+  },
+  "requested_at": "2026-10-11T02:12:14.134529+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_memory_working_set_bytes\",\"container\":\"server\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod8d2b03fe_2b94_4e4c_bb5a_02bf84873c81.slice/cri-containerd-8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f.scope\",\"image\":\"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/emailservice:v0.10.6\",\"instance\":\"172.18.0.3:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker2\",\"pod\":\"emailservice-76c84c79d6-265fj\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_memory_working_set_bytes",
+        "container": "server",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod8d2b03fe_2b94_4e4c_bb5a_02bf84873c81.slice/cri-containerd-8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f.scope",
+        "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/emailservice:v0.10.6",
+        "instance": "172.18.0.3:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker2",
+        "pod": "emailservice-76c84c79d6-265fj",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:12:14.145517+00:00"
+}

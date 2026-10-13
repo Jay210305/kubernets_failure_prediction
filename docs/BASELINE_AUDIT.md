@@ -1,10 +1,14 @@
 ---
 kind: data-audit
 status: failed-data-readiness
-checked: 2026-10-06
+checked: 2026-10-10
 ---
 
-# Initial baseline audit
+# Baseline and telemetry readiness audit
+
+**Current verdict (2026-10-10): failed measurement readiness.** A new real workload capture contains nonzero/variable metrics with matching CSV/Parquet/masks, but source freshness fails the proposed protocol. See [the dated Phase 04 query and quality audit](telemetry/2026-10-10-phase04.md) for all 55 query pairs, source ages, provenance and repair actions. The original baseline remains unchanged and invalid.
+
+## Historical baseline findings (2026-10-06)
 
 ## What is present
 
@@ -26,3 +30,7 @@ checked: 2026-10-06
 ## Next evidence gate
 
 Before another capture, record the live Prometheus URL, successful query count per feature and service, sample timestamps, pod/service label sets, actual NaN rate before filling, nonzero/variance counts, and a known workload interval. Preserve missingness separately from a measured zero. Confirm CSV/Parquet parity and write a capture manifest with cluster, scrape interval, query versions, start/end UTC times, and workload. Review this audit before labeling or training.
+
+## Re-measurement and implementation handoff (2026-10-10)
+
+The old baseline was remeasured: 361 rows × 55 metrics, zero nonzero cells, matching CSV/Parquet and unchanged source hashes. The historical causal hypotheses above remain hypotheses about that old capture. The collector has since been repaired; its configurable default endpoint is 9090 and the actual capture used an explicit temporary 9095 forward. Follow [the current audit](telemetry/2026-10-10-phase04.md), [run contract](../google_boutique/runs/CONTEXT.md), [capture provenance template](_templates/capture-manifest.json), and [protocol](EXPERIMENT_PROTOCOL.md) before proceeding. Labels/training remain blocked by measurement freshness, missing request oracle/episodes and unverified historical availability/topology.

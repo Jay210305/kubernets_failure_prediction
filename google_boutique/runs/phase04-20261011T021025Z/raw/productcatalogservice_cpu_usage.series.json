@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791683995.0,
+    "end": 1791684595.0
+  },
+  "requested_at": "2026-10-11T02:10:33.412617+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_cpu_usage_seconds_total\",\"container\":\"server\",\"cpu\":\"total\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfce4bb14_e9ee_441e_a4e1_7d176195cbdd.slice/cri-containerd-fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a.scope\",\"image\":\"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/productcatalogservice:v0.10.6\",\"instance\":\"172.18.0.4:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker\",\"pod\":\"productcatalogservice-7dd48bf974-hrknt\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_cpu_usage_seconds_total",
+        "container": "server",
+        "cpu": "total",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfce4bb14_e9ee_441e_a4e1_7d176195cbdd.slice/cri-containerd-fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a.scope",
+        "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/productcatalogservice:v0.10.6",
+        "instance": "172.18.0.4:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker",
+        "pod": "productcatalogservice-7dd48bf974-hrknt",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:10:33.424804+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "cluster_context": "REQUIRED: exact kubectl context",
+  "cluster_config_revision": "REQUIRED: config hash and deployment evidence",
+  "scrape_interval_evidence": "REQUIRED: saved actual Prometheus targets/config, not just requested query step",
+  "workload": {
+    "generator": "REQUIRED: image/revision, settings and actual workload evidence",
+    "verified_start_utc": "REQUIRED: UTC ISO timestamp",
+    "verified_end_utc": "REQUIRED: UTC ISO timestamp",
+    "evidence_paths": [],
+    "note": "Fill only from measured evidence; deployment readiness alone is insufficient."
+  },
+  "cluster_evidence": "REQUIRED: pods, node placement, services/deployment labels and revisions",
+  "evidence_artifacts": [],
+  "prior_baseline_hashes": {},
+  "capture_configuration": {
+    "prometheus_url": "http://localhost:9090",
+    "namespace": "demo-app",
+    "query_step_seconds": 5,
+    "query_version": "cadvisor-eth0-missing-preserving-v2",
+    "start_utc": "REQUIRED: aligned UTC bound",
+    "end_utc": "REQUIRED: aligned UTC bound",
+    "output_dir": "REQUIRED: new dated directory",
+    "service_pod_mapping": "REQUIRED: evidence path",
+    "raw_and_derived_paths": "Recorded by the collector with hashes; never overwrite baseline_run_01."
+  }
+}

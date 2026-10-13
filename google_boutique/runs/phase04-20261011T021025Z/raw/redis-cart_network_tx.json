@@ -1,0 +1,14 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/query_range",
+  "params": {
+    "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+    "start": 1791683995.0,
+    "end": 1791684595.0,
+    "step": "5s"
+  },
+  "requested_at": "2026-10-11T02:10:47.237138+00:00",
+  "http_status": 400,
+  "body": "{\"status\":\"error\",\"errorType\":\"bad_data\",\"error\":\"invalid parameter \\\"query\\\": 1:75: parse error: unknown escape sequence U+002D '-'\"}",
+  "error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=sum%28rate%28container_network_transmit_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D%5B30s%5D%29%29&start=1791683995.0&end=1791684595.0&step=5s",
+  "received_at": "2026-10-11T02:10:47.264162+00:00"
+}

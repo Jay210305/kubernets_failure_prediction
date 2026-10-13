@@ -1,0 +1,32 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791684090.0,
+    "end": 1791684690.0
+  },
+  "requested_at": "2026-10-11T02:13:46.563637+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_memory_working_set_bytes\",\"container\":\"server\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod94be102b_5460_4dd8_8635_368c685f831e.slice/cri-containerd-34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8.scope\",\"image\":\"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/frontend:v0.10.6\",\"instance\":\"172.18.0.4:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker\",\"pod\":\"frontend-6685976567-824tt\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_memory_working_set_bytes",
+        "container": "server",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod94be102b_5460_4dd8_8635_368c685f831e.slice/cri-containerd-34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8.scope",
+        "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/frontend:v0.10.6",
+        "instance": "172.18.0.4:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker",
+        "pod": "frontend-6685976567-824tt",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:13:46.571946+00:00"
+}

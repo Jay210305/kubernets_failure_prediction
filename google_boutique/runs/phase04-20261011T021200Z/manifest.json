@@ -1,0 +1,3164 @@
+{
+  "format_version": 2,
+  "query_version": "cadvisor-eth0-missing-preserving-v2",
+  "capture_mode": "retrospective-query-range",
+  "prometheus_url": "http://127.0.0.1:9095",
+  "namespace": "demo-app",
+  "start_utc": "2026-10-11T02:01:30+00:00",
+  "end_utc": "2026-10-11T02:11:30+00:00",
+  "query_step_seconds": 5,
+  "row_count": 121,
+  "services": [
+    "frontend",
+    "cartservice",
+    "productcatalogservice",
+    "currencyservice",
+    "paymentservice",
+    "shippingservice",
+    "emailservice",
+    "checkoutservice",
+    "recommendationservice",
+    "adservice",
+    "redis-cart"
+  ],
+  "features": [
+    "cpu_usage",
+    "memory_usage",
+    "network_rx",
+    "network_tx",
+    "http_errors"
+  ],
+  "primary_features": [
+    "cpu_usage",
+    "memory_usage",
+    "network_rx",
+    "network_tx"
+  ],
+  "columns": [
+    "frontend_cpu_usage",
+    "frontend_memory_usage",
+    "frontend_network_rx",
+    "frontend_network_tx",
+    "frontend_http_errors",
+    "cartservice_cpu_usage",
+    "cartservice_memory_usage",
+    "cartservice_network_rx",
+    "cartservice_network_tx",
+    "cartservice_http_errors",
+    "productcatalogservice_cpu_usage",
+    "productcatalogservice_memory_usage",
+    "productcatalogservice_network_rx",
+    "productcatalogservice_network_tx",
+    "productcatalogservice_http_errors",
+    "currencyservice_cpu_usage",
+    "currencyservice_memory_usage",
+    "currencyservice_network_rx",
+    "currencyservice_network_tx",
+    "currencyservice_http_errors",
+    "paymentservice_cpu_usage",
+    "paymentservice_memory_usage",
+    "paymentservice_network_rx",
+    "paymentservice_network_tx",
+    "paymentservice_http_errors",
+    "shippingservice_cpu_usage",
+    "shippingservice_memory_usage",
+    "shippingservice_network_rx",
+    "shippingservice_network_tx",
+    "shippingservice_http_errors",
+    "emailservice_cpu_usage",
+    "emailservice_memory_usage",
+    "emailservice_network_rx",
+    "emailservice_network_tx",
+    "emailservice_http_errors",
+    "checkoutservice_cpu_usage",
+    "checkoutservice_memory_usage",
+    "checkoutservice_network_rx",
+    "checkoutservice_network_tx",
+    "checkoutservice_http_errors",
+    "recommendationservice_cpu_usage",
+    "recommendationservice_memory_usage",
+    "recommendationservice_network_rx",
+    "recommendationservice_network_tx",
+    "recommendationservice_http_errors",
+    "adservice_cpu_usage",
+    "adservice_memory_usage",
+    "adservice_network_rx",
+    "adservice_network_tx",
+    "adservice_http_errors",
+    "redis-cart_cpu_usage",
+    "redis-cart_memory_usage",
+    "redis-cart_network_rx",
+    "redis-cart_network_tx",
+    "redis-cart_http_errors"
+  ],
+  "queries": [
+    {
+      "service": "frontend",
+      "feature": "cpu_usage",
+      "column": "frontend_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod94be102b_5460_4dd8_8635_368c685f831e.slice/cri-containerd-34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/frontend:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "frontend-6685976567-824tt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 102,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "frontend",
+      "feature": "memory_usage",
+      "column": "frontend_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod94be102b_5460_4dd8_8635_368c685f831e.slice/cri-containerd-34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/frontend:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "34e1f8617f88d435a73f1d81f3b0325e0426f4d4c92d33cee957723e4ee5d9e8",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "frontend-6685976567-824tt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "frontend",
+      "feature": "network_rx",
+      "column": "frontend_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod94be102b_5460_4dd8_8635_368c685f831e.slice/cri-containerd-b9f7bbdec0e90d078c586f20efddaa54d177ed95f0bef92aafb3148edcff7f3a.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "b9f7bbdec0e90d078c586f20efddaa54d177ed95f0bef92aafb3148edcff7f3a",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "frontend-6685976567-824tt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 112,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "frontend",
+      "feature": "network_tx",
+      "column": "frontend_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"frontend-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod94be102b_5460_4dd8_8635_368c685f831e.slice/cri-containerd-b9f7bbdec0e90d078c586f20efddaa54d177ed95f0bef92aafb3148edcff7f3a.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "b9f7bbdec0e90d078c586f20efddaa54d177ed95f0bef92aafb3148edcff7f3a",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "frontend-6685976567-824tt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 112,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "frontend",
+      "feature": "http_errors",
+      "column": "frontend_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"frontend-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"frontend-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "cartservice",
+      "feature": "cpu_usage",
+      "column": "cartservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod7cce1707_0b3b_488f_a5a8_c589cba2128a.slice/cri-containerd-7c2d5879492a600ffb522cab7a3da52cb647ca0c88e10d5af48ef1e6dd9a3a93.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/cartservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "7c2d5879492a600ffb522cab7a3da52cb647ca0c88e10d5af48ef1e6dd9a3a93",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "cartservice-9479b6c-ff2vr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 103,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "cartservice",
+      "feature": "memory_usage",
+      "column": "cartservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod7cce1707_0b3b_488f_a5a8_c589cba2128a.slice/cri-containerd-7c2d5879492a600ffb522cab7a3da52cb647ca0c88e10d5af48ef1e6dd9a3a93.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/cartservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "7c2d5879492a600ffb522cab7a3da52cb647ca0c88e10d5af48ef1e6dd9a3a93",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "cartservice-9479b6c-ff2vr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "cartservice",
+      "feature": "network_rx",
+      "column": "cartservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod7cce1707_0b3b_488f_a5a8_c589cba2128a.slice/cri-containerd-017826376e999e15778a3f4a007be1d93bfe414978b2b42149fe5d3763cfd0e9.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "017826376e999e15778a3f4a007be1d93bfe414978b2b42149fe5d3763cfd0e9",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "cartservice-9479b6c-ff2vr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 107,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "cartservice",
+      "feature": "network_tx",
+      "column": "cartservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod7cce1707_0b3b_488f_a5a8_c589cba2128a.slice/cri-containerd-017826376e999e15778a3f4a007be1d93bfe414978b2b42149fe5d3763cfd0e9.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "017826376e999e15778a3f4a007be1d93bfe414978b2b42149fe5d3763cfd0e9",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "cartservice-9479b6c-ff2vr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 107,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "cartservice",
+      "feature": "http_errors",
+      "column": "cartservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"cartservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "productcatalogservice",
+      "feature": "cpu_usage",
+      "column": "productcatalogservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfce4bb14_e9ee_441e_a4e1_7d176195cbdd.slice/cri-containerd-fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/productcatalogservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "productcatalogservice-7dd48bf974-hrknt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 112,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "productcatalogservice",
+      "feature": "memory_usage",
+      "column": "productcatalogservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfce4bb14_e9ee_441e_a4e1_7d176195cbdd.slice/cri-containerd-fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/productcatalogservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "fe6a141421d97736dd0f3dd6fc1aea4b6002c55d29839498141b6a481a9ebd0a",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "productcatalogservice-7dd48bf974-hrknt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "productcatalogservice",
+      "feature": "network_rx",
+      "column": "productcatalogservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfce4bb14_e9ee_441e_a4e1_7d176195cbdd.slice/cri-containerd-841fe7074a839d88c12fd52e7f9b5cbc53f1b450ba79df9bb81a1cc2beff9514.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "841fe7074a839d88c12fd52e7f9b5cbc53f1b450ba79df9bb81a1cc2beff9514",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "productcatalogservice-7dd48bf974-hrknt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 116,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "productcatalogservice",
+      "feature": "network_tx",
+      "column": "productcatalogservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfce4bb14_e9ee_441e_a4e1_7d176195cbdd.slice/cri-containerd-841fe7074a839d88c12fd52e7f9b5cbc53f1b450ba79df9bb81a1cc2beff9514.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "841fe7074a839d88c12fd52e7f9b5cbc53f1b450ba79df9bb81a1cc2beff9514",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "productcatalogservice-7dd48bf974-hrknt",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 116,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "productcatalogservice",
+      "feature": "http_errors",
+      "column": "productcatalogservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"productcatalogservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "currencyservice",
+      "feature": "cpu_usage",
+      "column": "currencyservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod046a0c9e_5849_4691_8982_6cb31196ea11.slice/cri-containerd-d15c97d9fbdbd81a95832bede14b603eed1ae6dc9d9ea600862e8b3401097008.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/currencyservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "d15c97d9fbdbd81a95832bede14b603eed1ae6dc9d9ea600862e8b3401097008",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "currencyservice-64b75b748-vq4mr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 101,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "currencyservice",
+      "feature": "memory_usage",
+      "column": "currencyservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod046a0c9e_5849_4691_8982_6cb31196ea11.slice/cri-containerd-d15c97d9fbdbd81a95832bede14b603eed1ae6dc9d9ea600862e8b3401097008.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/currencyservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "d15c97d9fbdbd81a95832bede14b603eed1ae6dc9d9ea600862e8b3401097008",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "currencyservice-64b75b748-vq4mr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "currencyservice",
+      "feature": "network_rx",
+      "column": "currencyservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod046a0c9e_5849_4691_8982_6cb31196ea11.slice/cri-containerd-182a4d0ff1b98e2c46d12edf747b90393759cc9fab2802128f60abd154a95d7c.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "182a4d0ff1b98e2c46d12edf747b90393759cc9fab2802128f60abd154a95d7c",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "currencyservice-64b75b748-vq4mr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 107,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "currencyservice",
+      "feature": "network_tx",
+      "column": "currencyservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod046a0c9e_5849_4691_8982_6cb31196ea11.slice/cri-containerd-182a4d0ff1b98e2c46d12edf747b90393759cc9fab2802128f60abd154a95d7c.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "182a4d0ff1b98e2c46d12edf747b90393759cc9fab2802128f60abd154a95d7c",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "currencyservice-64b75b748-vq4mr",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 107,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "currencyservice",
+      "feature": "http_errors",
+      "column": "currencyservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"currencyservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "paymentservice",
+      "feature": "cpu_usage",
+      "column": "paymentservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod6f073c54_a42a_463b_9c49_fabd308523e2.slice/cri-containerd-f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/paymentservice:v0.10.6",
+          "instance": "172.18.0.3:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "paymentservice-5df7f57d78-82x4m",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 101,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "paymentservice",
+      "feature": "memory_usage",
+      "column": "paymentservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod6f073c54_a42a_463b_9c49_fabd308523e2.slice/cri-containerd-f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/paymentservice:v0.10.6",
+          "instance": "172.18.0.3:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "f6da0d8becd21d365b7ce7f58c16146ef11a2d4eccfc3e95962a17f5172d4702",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "paymentservice-5df7f57d78-82x4m",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "paymentservice",
+      "feature": "network_rx",
+      "column": "paymentservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod6f073c54_a42a_463b_9c49_fabd308523e2.slice/cri-containerd-3cb94094c5f779f96a2a0f46407c0af1ecaec58d100f7ae13b0b537aeafafc3a.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.3:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "3cb94094c5f779f96a2a0f46407c0af1ecaec58d100f7ae13b0b537aeafafc3a",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "paymentservice-5df7f57d78-82x4m",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 112,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "paymentservice",
+      "feature": "network_tx",
+      "column": "paymentservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod6f073c54_a42a_463b_9c49_fabd308523e2.slice/cri-containerd-3cb94094c5f779f96a2a0f46407c0af1ecaec58d100f7ae13b0b537aeafafc3a.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.3:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "3cb94094c5f779f96a2a0f46407c0af1ecaec58d100f7ae13b0b537aeafafc3a",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "paymentservice-5df7f57d78-82x4m",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 112,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "paymentservice",
+      "feature": "http_errors",
+      "column": "paymentservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"paymentservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "shippingservice",
+      "feature": "cpu_usage",
+      "column": "shippingservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod64d27dfa_04f9_461a_80e6_428ca9292755.slice/cri-containerd-b11cdb08dca4d6c0b5717790f835050c73d06a2c3914888706a25e90d871735f.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/shippingservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "b11cdb08dca4d6c0b5717790f835050c73d06a2c3914888706a25e90d871735f",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "shippingservice-768bf5c46b-nll98",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 110,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "shippingservice",
+      "feature": "memory_usage",
+      "column": "shippingservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod64d27dfa_04f9_461a_80e6_428ca9292755.slice/cri-containerd-b11cdb08dca4d6c0b5717790f835050c73d06a2c3914888706a25e90d871735f.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/shippingservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "b11cdb08dca4d6c0b5717790f835050c73d06a2c3914888706a25e90d871735f",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "shippingservice-768bf5c46b-nll98",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "shippingservice",
+      "feature": "network_rx",
+      "column": "shippingservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod64d27dfa_04f9_461a_80e6_428ca9292755.slice/cri-containerd-7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "shippingservice-768bf5c46b-nll98",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 104,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "shippingservice",
+      "feature": "network_tx",
+      "column": "shippingservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod64d27dfa_04f9_461a_80e6_428ca9292755.slice/cri-containerd-7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "shippingservice-768bf5c46b-nll98",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 104,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "shippingservice",
+      "feature": "http_errors",
+      "column": "shippingservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "emailservice",
+      "feature": "cpu_usage",
+      "column": "emailservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod8d2b03fe_2b94_4e4c_bb5a_02bf84873c81.slice/cri-containerd-8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/emailservice:v0.10.6",
+          "instance": "172.18.0.3:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "emailservice-76c84c79d6-265fj",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 106,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "emailservice",
+      "feature": "memory_usage",
+      "column": "emailservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod8d2b03fe_2b94_4e4c_bb5a_02bf84873c81.slice/cri-containerd-8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/emailservice:v0.10.6",
+          "instance": "172.18.0.3:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "8ad2adc0bc43161ccc92676f0b8f4f6cc78252ed8439b48c6ed2fc609c58c47f",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "emailservice-76c84c79d6-265fj",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "emailservice",
+      "feature": "network_rx",
+      "column": "emailservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod8d2b03fe_2b94_4e4c_bb5a_02bf84873c81.slice/cri-containerd-decad349dbd0e672f595d903b166be9f90a92ab1efe1a0fc0e87f1550c9fafa4.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.3:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "decad349dbd0e672f595d903b166be9f90a92ab1efe1a0fc0e87f1550c9fafa4",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "emailservice-76c84c79d6-265fj",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 111,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "emailservice",
+      "feature": "network_tx",
+      "column": "emailservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod8d2b03fe_2b94_4e4c_bb5a_02bf84873c81.slice/cri-containerd-decad349dbd0e672f595d903b166be9f90a92ab1efe1a0fc0e87f1550c9fafa4.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.3:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "decad349dbd0e672f595d903b166be9f90a92ab1efe1a0fc0e87f1550c9fafa4",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "emailservice-76c84c79d6-265fj",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 111,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "emailservice",
+      "feature": "http_errors",
+      "column": "emailservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"emailservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "checkoutservice",
+      "feature": "cpu_usage",
+      "column": "checkoutservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod9494ee17_b9c5_43d4_8cd9_58ea8cc2f658.slice/cri-containerd-28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/checkoutservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "checkoutservice-8458467c66-l5rdb",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 112,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "checkoutservice",
+      "feature": "memory_usage",
+      "column": "checkoutservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod9494ee17_b9c5_43d4_8cd9_58ea8cc2f658.slice/cri-containerd-28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/checkoutservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "28a59b5e40a06163548803ca9533faef8c386e778ea2d41f683b8892141b00a7",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "checkoutservice-8458467c66-l5rdb",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "checkoutservice",
+      "feature": "network_rx",
+      "column": "checkoutservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod9494ee17_b9c5_43d4_8cd9_58ea8cc2f658.slice/cri-containerd-abd1e5e7d4bec2ad5e6f4f6b4f13e8cc121ef1ab64e38813124d593ff86e9210.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "abd1e5e7d4bec2ad5e6f4f6b4f13e8cc121ef1ab64e38813124d593ff86e9210",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "checkoutservice-8458467c66-l5rdb",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 106,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "checkoutservice",
+      "feature": "network_tx",
+      "column": "checkoutservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod9494ee17_b9c5_43d4_8cd9_58ea8cc2f658.slice/cri-containerd-abd1e5e7d4bec2ad5e6f4f6b4f13e8cc121ef1ab64e38813124d593ff86e9210.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "abd1e5e7d4bec2ad5e6f4f6b4f13e8cc121ef1ab64e38813124d593ff86e9210",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "checkoutservice-8458467c66-l5rdb",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 106,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "checkoutservice",
+      "feature": "http_errors",
+      "column": "checkoutservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"checkoutservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "recommendationservice",
+      "feature": "cpu_usage",
+      "column": "recommendationservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod95750730_c5b7_48c1_9820_37441609f990.slice/cri-containerd-fe82b17a06630d0bf84c178fc2e42d3f1c93816ac9a60b4e2eddc3c8c4bd0e56.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/recommendationservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "fe82b17a06630d0bf84c178fc2e42d3f1c93816ac9a60b4e2eddc3c8c4bd0e56",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "recommendationservice-bb9db87fd-4b7d4",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 106,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "recommendationservice",
+      "feature": "memory_usage",
+      "column": "recommendationservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod95750730_c5b7_48c1_9820_37441609f990.slice/cri-containerd-fe82b17a06630d0bf84c178fc2e42d3f1c93816ac9a60b4e2eddc3c8c4bd0e56.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/recommendationservice:v0.10.6",
+          "instance": "172.18.0.4:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "fe82b17a06630d0bf84c178fc2e42d3f1c93816ac9a60b4e2eddc3c8c4bd0e56",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "recommendationservice-bb9db87fd-4b7d4",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "recommendationservice",
+      "feature": "network_rx",
+      "column": "recommendationservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod95750730_c5b7_48c1_9820_37441609f990.slice/cri-containerd-ca50b87b85a70d8a561b54022b55066688ef10d536914b5182912d291515e563.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "ca50b87b85a70d8a561b54022b55066688ef10d536914b5182912d291515e563",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "recommendationservice-bb9db87fd-4b7d4",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 104,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "recommendationservice",
+      "feature": "network_tx",
+      "column": "recommendationservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod95750730_c5b7_48c1_9820_37441609f990.slice/cri-containerd-ca50b87b85a70d8a561b54022b55066688ef10d536914b5182912d291515e563.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.4:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "ca50b87b85a70d8a561b54022b55066688ef10d536914b5182912d291515e563",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker",
+          "pod": "recommendationservice-bb9db87fd-4b7d4",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 104,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "recommendationservice",
+      "feature": "http_errors",
+      "column": "recommendationservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"recommendationservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "adservice",
+      "feature": "cpu_usage",
+      "column": "adservice_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_cpu_usage_seconds_total",
+          "container": "server",
+          "cpu": "total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-poddb85d284_2f9f_4bd7_b301_9b7c786f18fa.slice/cri-containerd-f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/adservice:v0.10.6",
+          "instance": "172.18.0.3:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "adservice-748f6f68d4-vc8g2",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 113,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "adservice",
+      "feature": "memory_usage",
+      "column": "adservice_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_memory_working_set_bytes",
+          "container": "server",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-poddb85d284_2f9f_4bd7_b301_9b7c786f18fa.slice/cri-containerd-f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9.scope",
+          "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/adservice:v0.10.6",
+          "instance": "172.18.0.3:10250",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "f56cea2bdb0dc0c1646f3e587283f231ac35dea2224ddbb0951eb0bd80ea17a9",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "adservice-748f6f68d4-vc8g2",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 121,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "adservice",
+      "feature": "network_rx",
+      "column": "adservice_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_receive_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-poddb85d284_2f9f_4bd7_b301_9b7c786f18fa.slice/cri-containerd-08fea1338ce682651450e71ea11622ec229c9f1c77e1dc490ea0eeebbb7d4eba.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.3:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "08fea1338ce682651450e71ea11622ec229c9f1c77e1dc490ea0eeebbb7d4eba",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "adservice-748f6f68d4-vc8g2",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 108,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "adservice",
+      "feature": "network_tx",
+      "column": "adservice_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"adservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [
+        {
+          "__name__": "container_network_transmit_bytes_total",
+          "endpoint": "https-metrics",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-poddb85d284_2f9f_4bd7_b301_9b7c786f18fa.slice/cri-containerd-08fea1338ce682651450e71ea11622ec229c9f1c77e1dc490ea0eeebbb7d4eba.scope",
+          "image": "registry.k8s.io/pause:3.10",
+          "instance": "172.18.0.3:10250",
+          "interface": "eth0",
+          "job": "kubelet",
+          "metrics_path": "/metrics/cadvisor",
+          "name": "08fea1338ce682651450e71ea11622ec229c9f1c77e1dc490ea0eeebbb7d4eba",
+          "namespace": "demo-app",
+          "node": "aiops-cluster-worker2",
+          "pod": "adservice-748f6f68d4-vc8g2",
+          "service": "prometheus-kube-prometheus-kubelet"
+        }
+      ],
+      "source_time_diagnostics": {
+        "matched_series": 1,
+        "returned_samples": 121,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 1,
+      "returned_samples": 108,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "adservice",
+      "feature": "http_errors",
+      "column": "adservice_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"adservice-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"adservice-.*\",status=~\"5..\"}",
+      "http_status": 200,
+      "error": null,
+      "warnings": [],
+      "source_time_error": null,
+      "series_error": null,
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "redis-cart",
+      "feature": "cpu_usage",
+      "column": "redis-cart_cpu_usage",
+      "required": true,
+      "unit": "cores",
+      "query": "sum(rate(container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}[30s]))",
+      "selector": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 400,
+      "error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=sum%28rate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccontainer%21%3D%22%22%2Ccontainer%21%3D%22POD%22%7D%5B30s%5D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "warnings": [],
+      "source_time_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=min%28timestamp%28container_cpu_usage_seconds_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccontainer%21%3D%22%22%2Ccontainer%21%3D%22POD%22%7D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "series_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/series?match%5B%5D=container_cpu_usage_seconds_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccontainer%21%3D%22%22%2Ccontainer%21%3D%22POD%22%7D&start=1791684090.0&end=1791684690.0",
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "redis-cart",
+      "feature": "memory_usage",
+      "column": "redis-cart_memory_usage",
+      "required": true,
+      "unit": "bytes",
+      "query": "sum(container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"})",
+      "selector": "container_memory_working_set_bytes{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+      "http_status": 400,
+      "error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=sum%28container_memory_working_set_bytes%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccontainer%21%3D%22%22%2Ccontainer%21%3D%22POD%22%7D%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "warnings": [],
+      "source_time_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=min%28timestamp%28container_memory_working_set_bytes%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccontainer%21%3D%22%22%2Ccontainer%21%3D%22POD%22%7D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "series_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/series?match%5B%5D=container_memory_working_set_bytes%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccontainer%21%3D%22%22%2Ccontainer%21%3D%22POD%22%7D&start=1791684090.0&end=1791684690.0",
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "redis-cart",
+      "feature": "network_rx",
+      "column": "redis-cart_network_rx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_receive_bytes_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 400,
+      "error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=sum%28rate%28container_network_receive_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D%5B30s%5D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "warnings": [],
+      "source_time_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=min%28timestamp%28container_network_receive_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "series_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/series?match%5B%5D=container_network_receive_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D&start=1791684090.0&end=1791684690.0",
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "redis-cart",
+      "feature": "network_tx",
+      "column": "redis-cart_network_tx",
+      "required": true,
+      "unit": "bytes/second",
+      "query": "sum(rate(container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}[30s]))",
+      "selector": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+      "http_status": 400,
+      "error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=sum%28rate%28container_network_transmit_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D%5B30s%5D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "warnings": [],
+      "source_time_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=min%28timestamp%28container_network_transmit_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "series_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/series?match%5B%5D=container_network_transmit_bytes_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Cinterface%3D%22eth0%22%7D&start=1791684090.0&end=1791684690.0",
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    },
+    {
+      "service": "redis-cart",
+      "feature": "http_errors",
+      "column": "redis-cart_http_errors",
+      "required": false,
+      "unit": "requests/second",
+      "query": "sum(rate(http_requests_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",status=~\"5..\"}[30s]))",
+      "selector": "http_requests_total{namespace=\"demo-app\",pod=~\"redis\\-cart-.*\",status=~\"5..\"}",
+      "http_status": 400,
+      "error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=sum%28rate%28http_requests_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cstatus%3D~%225..%22%7D%5B30s%5D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "warnings": [],
+      "source_time_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/query_range?query=min%28timestamp%28http_requests_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cstatus%3D~%225..%22%7D%29%29&start=1791684090.0&end=1791684690.0&step=5s",
+      "series_error": "400 Client Error: Bad Request for url: http://127.0.0.1:9095/api/v1/series?match%5B%5D=http_requests_total%7Bnamespace%3D%22demo-app%22%2Cpod%3D~%22redis%5C-cart-.%2A%22%2Cstatus%3D~%225..%22%7D&start=1791684090.0&end=1791684690.0",
+      "labels": [],
+      "source_time_diagnostics": {
+        "matched_series": 0,
+        "returned_samples": 0,
+        "off_grid": 0,
+        "duplicate_timestamps": 0,
+        "invalid_values": 0
+      },
+      "matched_series": 0,
+      "returned_samples": 0,
+      "off_grid": 0,
+      "duplicate_timestamps": 0,
+      "invalid_values": 0
+    }
+  ],
+  "provenance": {
+    "cluster_context": "kind-aiops-cluster",
+    "cluster_config_revision": "33207fe75c7aa89882307bfd760ba48c3a35abaceff47c60da2839f8472927a5",
+    "cluster_evidence": "google_boutique\\runs\\phase04-20261011T021200Z-evidence",
+    "workload": {
+      "generator": "existing deployment/loadgenerator",
+      "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/loadgenerator:v0.10.6",
+      "env": [
+        {
+          "name": "FRONTEND_ADDR",
+          "value": "frontend:80"
+        },
+        {
+          "name": "USERS",
+          "value": "10"
+        },
+        {
+          "name": "RATE",
+          "value": "1"
+        }
+      ],
+      "available_replicas": 1,
+      "evidence_paths": [
+        "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\workload_logs.json",
+        "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\deployments.json"
+      ],
+      "verified_start_utc": "2026-10-11T01:52:04.961094452Z",
+      "verified_end_utc": "2026-10-11T02:12:02.152427368Z",
+      "note": "Observed timestamped loadgenerator output brackets capture; configuration is not achieved throughput."
+    },
+    "scrape_interval_evidence": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\targets.json",
+    "prior_baseline_hashes": {
+      "baseline_run_01.csv": "7acdb6a70cca27e5feeec2906f95b73d56ba5a802cbdc01a315480b1d6469d65",
+      "baseline_run_01.parquet": "9b5c3ec34d467f23bdb352edf92e61d43ce507fd8f5771d0dfb8815970cfbce5"
+    },
+    "evidence_artifacts": [
+      {
+        "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\deployments.json",
+        "sha256": "8cd0ee3b79e4d924b48c7950ea543acf7fa7915eb6b1b771fe85c47a646d7dee"
+      },
+      {
+        "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\nodes.json",
+        "sha256": "c393ed85f0431239508bfdd969dfb1cd02067c1af7ef24a9f0f40d63b0f8104d"
+      },
+      {
+        "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\pods.json",
+        "sha256": "835c1ac3f61e9d28d18d3956d571e30b3cf124fd50af6f2b3fe1eaa29da35a38"
+      },
+      {
+        "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\targets.json",
+        "sha256": "393b478d9bddf706d6647f1195c4615eefeca224f4bbe75107b8f1f784adc46a"
+      },
+      {
+        "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\workload_logs.json",
+        "sha256": "d290f1f07ae31eac193f4b2b4cb036b4e73651104d3da9a805aca4c6dee5cb6d"
+      }
+    ]
+  },
+  "availability_note": "Receipt times belong to this extraction, not historical online availability.",
+  "source_revision": "9acf7c475ea2b4a2086b7d100dd366cb2d49bcb6",
+  "collector_sha256": "0d95f9815b7d3f800691b436688f6ad2fc1a43314dd0ffbf5d1448b5df65a7ee",
+  "artifacts": [
+    {
+      "path": "available_at.parquet",
+      "bytes": 43351,
+      "sha256": "9cbe4ccbdb2dcea6974d1516b03afe739a7f2a13bc748dfd32af6632bcd7b652"
+    },
+    {
+      "path": "observed.csv",
+      "bytes": 40195,
+      "sha256": "ea397ec4f72be9026cbcc6ae187e84a1938053210d4982ee478de23bebb07b96"
+    },
+    {
+      "path": "observed.parquet",
+      "bytes": 35885,
+      "sha256": "f15e72316769c02f09053c041abb8200a1c53cb4199af7d9fd0bd9b187b3b374"
+    },
+    {
+      "path": "raw/adservice_cpu_usage.json",
+      "bytes": 16048,
+      "sha256": "6270d8ba66035e438d17157bfb4abbe9ba0fca8970ea6e5977c3bf632adf6c02"
+    },
+    {
+      "path": "raw/adservice_cpu_usage.series.json",
+      "bytes": 2252,
+      "sha256": "89fff29afd504fe4f61336b9946e2ebbd3f6217963705c4b4e224bc7eea0f34b"
+    },
+    {
+      "path": "raw/adservice_cpu_usage.source-time.json",
+      "bytes": 15554,
+      "sha256": "7aebbd849c3fa9a82d7918a6723942b3aaae607436ccc34d853e303fe47a05a3"
+    },
+    {
+      "path": "raw/adservice_http_errors.json",
+      "bytes": 608,
+      "sha256": "4f3d3f7a7a47a1720bce8ff6a48a2b76c33e11aaf568c12fa2995c6dcca9d5f0"
+    },
+    {
+      "path": "raw/adservice_http_errors.series.json",
+      "bytes": 474,
+      "sha256": "c94a18ed09e336a018e9f9dc639fcef5b3928b18b62ec393aaa302b84c033992"
+    },
+    {
+      "path": "raw/adservice_http_errors.source-time.json",
+      "bytes": 608,
+      "sha256": "cfb1b013cfeadc0735fb8a239bf8449e3719b0a785b09d897a70a75fa308b94f"
+    },
+    {
+      "path": "raw/adservice_memory_usage.json",
+      "bytes": 14352,
+      "sha256": "e0b9efa7d64ad04e8d38cd2b7b36f8d27daa2d199e9422d0e53d8af572978498"
+    },
+    {
+      "path": "raw/adservice_memory_usage.series.json",
+      "bytes": 2212,
+      "sha256": "dc6f969d9170a0a7d0cb497060de5557e75018a970a4b3dde0f8772a7befc1c2"
+    },
+    {
+      "path": "raw/adservice_memory_usage.source-time.json",
+      "bytes": 15555,
+      "sha256": "4d9acf898fbe0796ca625e3fc40fcbc07f5e7bc3b839cddfb9089e1f34f221cb"
+    },
+    {
+      "path": "raw/adservice_network_rx.json",
+      "bytes": 14624,
+      "sha256": "01f6714dbd71796f10df7400d67005d1be7d5080d62e1ed926eca606947238a3"
+    },
+    {
+      "path": "raw/adservice_network_rx.series.json",
+      "bytes": 2089,
+      "sha256": "dc31d6a110b9c28e0e923a923d0ed631a155449bbdc3d7fd31b545f605ef4a7f"
+    },
+    {
+      "path": "raw/adservice_network_rx.source-time.json",
+      "bytes": 15538,
+      "sha256": "e3f9c14f19131d500a295accc38fb58e9d1ec556b939007e39712e957e095665"
+    },
+    {
+      "path": "raw/adservice_network_tx.json",
+      "bytes": 14657,
+      "sha256": "d427c059a7ab7a51a052915ad00231b4bb7980072881480ec3cb459375cbe8a7"
+    },
+    {
+      "path": "raw/adservice_network_tx.series.json",
+      "bytes": 2092,
+      "sha256": "ae8652fc833b600470ee46bf9d2b8376f555b8c2fc6aa0808cc02c6a9bc0bb2b"
+    },
+    {
+      "path": "raw/adservice_network_tx.source-time.json",
+      "bytes": 15539,
+      "sha256": "14fcb09a8a71a2c947cd0c7b7a76e915d8b92492227bc38471ac9b296db9e11b"
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.json",
+      "bytes": 14690,
+      "sha256": "e9c3ff414b04edfc52ab2a5fd0d2dffccf252658f1c2f8f47bda1e331c13ead2"
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.series.json",
+      "bytes": 2254,
+      "sha256": "291c2cd4f83a25bc9618b1f48b7b9bc917b655ced93f2798f61b79aa9e0b4356"
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.source-time.json",
+      "bytes": 15568,
+      "sha256": "7ddd76b80dbac3bdf76d078e12b574f9911a211eb81c031ce0554e380b66edef"
+    },
+    {
+      "path": "raw/cartservice_http_errors.json",
+      "bytes": 610,
+      "sha256": "76f81d785ed777d40bb91ba14e6ec243b7436ee65137303901f0a71d774d3039"
+    },
+    {
+      "path": "raw/cartservice_http_errors.series.json",
+      "bytes": 476,
+      "sha256": "efdfa184012c45288a995a7c23d0b2c31eefd6b2f6e28574270b00bd72efb5e5"
+    },
+    {
+      "path": "raw/cartservice_http_errors.source-time.json",
+      "bytes": 610,
+      "sha256": "1510204d5142e547ef46861b84677f8d8c66c1ae7f289a1f929c7eb3cc6f160e"
+    },
+    {
+      "path": "raw/cartservice_memory_usage.json",
+      "bytes": 14112,
+      "sha256": "8609af251ec39f6b7c3434a011d88bd13c32b7f5e235426e62e25c795f82deae"
+    },
+    {
+      "path": "raw/cartservice_memory_usage.series.json",
+      "bytes": 2214,
+      "sha256": "d1195e3b077fa064de7aa651b045e5a3444a4d1693baf73d3c1cf33cb1f37c6c"
+    },
+    {
+      "path": "raw/cartservice_memory_usage.source-time.json",
+      "bytes": 15569,
+      "sha256": "dfdf04ab955840e5cd5f105498fa5699d4d4766417200103e1d41ff8d62171a2"
+    },
+    {
+      "path": "raw/cartservice_network_rx.json",
+      "bytes": 14630,
+      "sha256": "688c9e632cc5bef3f3a1d4208fc23f55f8c7d766a997c2f7a1a85a2f8824d3f8"
+    },
+    {
+      "path": "raw/cartservice_network_rx.series.json",
+      "bytes": 2087,
+      "sha256": "3d176094307fc63f5858cf49996a99779e7fc864ac823252b1f1428d617d9c4a"
+    },
+    {
+      "path": "raw/cartservice_network_rx.source-time.json",
+      "bytes": 15538,
+      "sha256": "15caeb4796adc64b37287b2336e51ad048d08e073acfc878e325f1f47daaa41a"
+    },
+    {
+      "path": "raw/cartservice_network_tx.json",
+      "bytes": 14635,
+      "sha256": "6bb6ed69c53a3d2b49f04005b7680d27e0b13f29831f2507de0a83ff855a5658"
+    },
+    {
+      "path": "raw/cartservice_network_tx.series.json",
+      "bytes": 2090,
+      "sha256": "b1809f46ae52a2f592ab9847a7e387bda49ab046b03f1945dff4b8a5e3dc05eb"
+    },
+    {
+      "path": "raw/cartservice_network_tx.source-time.json",
+      "bytes": 15539,
+      "sha256": "96e9c0a1d9c2ff930df003cf3cff31c3806a07674a2bc868803acdb204bc1ac3"
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.json",
+      "bytes": 16068,
+      "sha256": "c606c6c90378324825f872bd54d86e4edc255ad4baa3b0565af1ca7f6415addd"
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.series.json",
+      "bytes": 2280,
+      "sha256": "5c0a188092d8e3759125ea104c49da564e4f423912d6aad0431457a1f27568b6"
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.source-time.json",
+      "bytes": 15554,
+      "sha256": "0c7cc9198671bce13d66eb28a5d4449cdd8aaa71eaacaddb3f0179f4bff9e250"
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.json",
+      "bytes": 614,
+      "sha256": "04222db7bab3aafa854fc384576a90046a8df115b93759a6f32a7a8a0bd5e78d"
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.series.json",
+      "bytes": 480,
+      "sha256": "c9d6a7275ac493a5c44c01acccdc26fca1bb79f9815bbf3daa4d39158abec463"
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.source-time.json",
+      "bytes": 614,
+      "sha256": "1f507c69cd3e5bdf89242626c0abcb8602660bb9545622b8e184d6036fb68cbc"
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.json",
+      "bytes": 13874,
+      "sha256": "e277377fd52522c8ddaff73def48d197965491a8ba3fe04730f3cc80f314194c"
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.series.json",
+      "bytes": 2240,
+      "sha256": "026c4994de55ff7b2989e198cc0ea1cafa6af5e9683719c2959d42e2c3007653"
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.source-time.json",
+      "bytes": 15555,
+      "sha256": "089ae7ab4e57b2cd24e24b5ee0b46f0e834e83992395007a38f73ddb5e07206c"
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.json",
+      "bytes": 14428,
+      "sha256": "3a7ef57af698b28a27e9002234b716627f250b2bc6eed0da3565dc76fcb55a25"
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.series.json",
+      "bytes": 2105,
+      "sha256": "e5241da22b2e4c695c6c51e32a0fa61b49967d624436872df5934e289047e800"
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.source-time.json",
+      "bytes": 15522,
+      "sha256": "1ebea8445ce6b1c8a4dec0814ee15dc0ff406d6486590303fbfce52409f61ba5"
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.json",
+      "bytes": 14399,
+      "sha256": "75c8af7b19c63c0dafe3b9bc163d59bdc114e4179b84982b486ec4c2b97f82d8"
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.series.json",
+      "bytes": 2108,
+      "sha256": "e43461641a9ae7c68a56fbe5f26a0b58cd2fdd5373975018838e1a601dd8e95a"
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.source-time.json",
+      "bytes": 15523,
+      "sha256": "f923621c3a50b939d5b64d33e920b65b7686410b2f67bd51921b578aaca0dcaf"
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.json",
+      "bytes": 14326,
+      "sha256": "e9f1770350e44efc156262f5871786b967315538665e50af0c48d23d052c298c"
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.series.json",
+      "bytes": 2278,
+      "sha256": "f3f670b197b510d26b12171edd7cc9528451a15116b03a468dbac54ca813989d"
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.source-time.json",
+      "bytes": 15540,
+      "sha256": "ab35a550558049070d4ad7c0c8fb6d41804d31112c4720667f70635eb6e62eb1"
+    },
+    {
+      "path": "raw/currencyservice_http_errors.json",
+      "bytes": 614,
+      "sha256": "b105a6e7e20978be9e455b975a8fd38e373186b7f6ccc918530b6f3af82a42bb"
+    },
+    {
+      "path": "raw/currencyservice_http_errors.series.json",
+      "bytes": 480,
+      "sha256": "7985151e1f1c722891101ab345c62329a13c3ea197dcec2201210017f68ed8c4"
+    },
+    {
+      "path": "raw/currencyservice_http_errors.source-time.json",
+      "bytes": 614,
+      "sha256": "d86c8e3a68c7db57d33de2166e4f7796dceb1a01a003ae0d5b37370a37fe3d4e"
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.json",
+      "bytes": 14116,
+      "sha256": "689daa2937f0c92d27907f4a75e2a9b1663f7bc9f78cdd46587f92f61db9e76c"
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.series.json",
+      "bytes": 2238,
+      "sha256": "6abd7f1db56913d9ad9ebc9fb50b06d1493675f7984f702cb3dbd9477ebc4cef"
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.source-time.json",
+      "bytes": 15541,
+      "sha256": "e8280cb37d259a3f5e3b9f505fcfbaeb86d2369c11f4852b6cad7662a0637f20"
+    },
+    {
+      "path": "raw/currencyservice_network_rx.json",
+      "bytes": 14610,
+      "sha256": "15a0f1449199db9959f72797788a285b8c349712cd2b27b7a8bf6d66166ad109"
+    },
+    {
+      "path": "raw/currencyservice_network_rx.series.json",
+      "bytes": 2103,
+      "sha256": "6fa058b3797dcba096f9bb8b2354401a7000155e99f40c428d7d8ff0768d40b1"
+    },
+    {
+      "path": "raw/currencyservice_network_rx.source-time.json",
+      "bytes": 15540,
+      "sha256": "088cc0ff43cc2893af3aadc9bd0c0969181fec1d44535e66eaa5a6c35d54a034"
+    },
+    {
+      "path": "raw/currencyservice_network_tx.json",
+      "bytes": 14609,
+      "sha256": "8385aa9eabebcdd0a2da5c4f2734917d3e948917fea89564cd354515fb074cf8"
+    },
+    {
+      "path": "raw/currencyservice_network_tx.series.json",
+      "bytes": 2106,
+      "sha256": "fce1725d1ed85964e09610d6edaf3688b76389a9125df41e2cbd54d674253972"
+    },
+    {
+      "path": "raw/currencyservice_network_tx.source-time.json",
+      "bytes": 15541,
+      "sha256": "51249d4ad6913c4d9dbab5a155c2ba208a1915c5a08ffc4825913222aa1abedb"
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.json",
+      "bytes": 15131,
+      "sha256": "f3954068f711f61eb2f06dc7df9ddfda6f6e12f2fb38ebc044ec169cda021ac6"
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.series.json",
+      "bytes": 2267,
+      "sha256": "c364098aa1388844ea39347b690740152dc81f58581f0a5aad45e3c61f9457cb"
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.source-time.json",
+      "bytes": 15557,
+      "sha256": "669f2867c3f439c9f661fda8fdf7abe2cc597968f94b5f9d297db6419ea80296"
+    },
+    {
+      "path": "raw/emailservice_http_errors.json",
+      "bytes": 611,
+      "sha256": "2a134907134f8b1a8ddd15b1871e1e35a8530d710cb6f2f85700068bcc67379c"
+    },
+    {
+      "path": "raw/emailservice_http_errors.series.json",
+      "bytes": 477,
+      "sha256": "0f3c3f005d319983e3622350b436abdc2662ab02da96d151d1c2b2f374427e30"
+    },
+    {
+      "path": "raw/emailservice_http_errors.source-time.json",
+      "bytes": 611,
+      "sha256": "65da9cee085fa67e4243158ad00ac1a2de65330fe76b38ee2a34e3a2099640f4"
+    },
+    {
+      "path": "raw/emailservice_memory_usage.json",
+      "bytes": 14113,
+      "sha256": "f93d9f5a090b9bec6e49dc3ff47b793a7233d6e83763bf80bebac48ebade9cdb"
+    },
+    {
+      "path": "raw/emailservice_memory_usage.series.json",
+      "bytes": 2227,
+      "sha256": "b80cf750cee1bd79c3f676838dc115696eb6d5365fffe27ae83cf45fec607d93"
+    },
+    {
+      "path": "raw/emailservice_memory_usage.source-time.json",
+      "bytes": 15558,
+      "sha256": "2062c795b45b5c701e8d803464f36f7a8eb21bd3261af4311615956d97abbca2"
+    },
+    {
+      "path": "raw/emailservice_network_rx.json",
+      "bytes": 15053,
+      "sha256": "f5f8d3cb899b74bf97bff63e91f665e8dcc2ac465467b070a1bdb9bc8db503de"
+    },
+    {
+      "path": "raw/emailservice_network_rx.series.json",
+      "bytes": 2098,
+      "sha256": "8972da8d7b33ae0a60d782289a67f0bb440ef45aa0b6c72d2f1be78d7b992c03"
+    },
+    {
+      "path": "raw/emailservice_network_rx.source-time.json",
+      "bytes": 15539,
+      "sha256": "f2ccf85f176484fb377ded329208fd72c4162e11e1a7d880d90eb70edbcc81e1"
+    },
+    {
+      "path": "raw/emailservice_network_tx.json",
+      "bytes": 15088,
+      "sha256": "fe21002856d17f5a036db9bcdf144f83a773b0b84a2bbe1269e50a790d5cbb8e"
+    },
+    {
+      "path": "raw/emailservice_network_tx.series.json",
+      "bytes": 2101,
+      "sha256": "d2a647341073a58a4cc773368777899aa381007f90c271215735e369c15fef4c"
+    },
+    {
+      "path": "raw/emailservice_network_tx.source-time.json",
+      "bytes": 15540,
+      "sha256": "3466bdabc094580abeed57d7022fa42843a423e7053ec6b173afc9fc037420d7"
+    },
+    {
+      "path": "raw/frontend_cpu_usage.json",
+      "bytes": 14433,
+      "sha256": "523423f2d72129b22fbef08f9b6413dee0f09acc2c0e9e63721d21838c10446a"
+    },
+    {
+      "path": "raw/frontend_cpu_usage.series.json",
+      "bytes": 2245,
+      "sha256": "3d5423fad02f6578cdea994a4dd120bbf65b8ecf11e6dda032b2f78550406929"
+    },
+    {
+      "path": "raw/frontend_cpu_usage.source-time.json",
+      "bytes": 15529,
+      "sha256": "7333b2711ef92399dc2fe188102bc8d5176555566eb125859e6336f0e0eee2b3"
+    },
+    {
+      "path": "raw/frontend_http_errors.json",
+      "bytes": 607,
+      "sha256": "a39dd1b741862ad4b66b0d5ecbfa82f520c37163ee919e1f4e4d477eb0300607"
+    },
+    {
+      "path": "raw/frontend_http_errors.series.json",
+      "bytes": 473,
+      "sha256": "17b72d5677157ead3cc2e4618e904c1a93ece3a34836bb4a2e1360082cd66a8e"
+    },
+    {
+      "path": "raw/frontend_http_errors.source-time.json",
+      "bytes": 607,
+      "sha256": "6b1ad47e4df726587fd58fd8f8bab9e7c1888acf562d2815c1ae484cfbb4807a"
+    },
+    {
+      "path": "raw/frontend_memory_usage.json",
+      "bytes": 14109,
+      "sha256": "244b787ae0406999af07621417f6d42179d555a6b689d02aa3862ce9da21c3d8"
+    },
+    {
+      "path": "raw/frontend_memory_usage.series.json",
+      "bytes": 2205,
+      "sha256": "6914d8480bddc8966c3be1f78b6ac85fc3bceaa8f0c8431aa6da984c176ee3a5"
+    },
+    {
+      "path": "raw/frontend_memory_usage.source-time.json",
+      "bytes": 15530,
+      "sha256": "a75ae32e29722d6af2ec362c5eee4f6d3f528234d9ee51e3f2bcb660e867ff6b"
+    },
+    {
+      "path": "raw/frontend_network_rx.json",
+      "bytes": 15251,
+      "sha256": "129c2c7cce91b614715e1489af198f52a49893c18d8d71aa9ec1ab381b8d99e6"
+    },
+    {
+      "path": "raw/frontend_network_rx.series.json",
+      "bytes": 2084,
+      "sha256": "91468358d6056978d86a974f9556a9ef18c05be997d8513b99f8f779d05b2aef"
+    },
+    {
+      "path": "raw/frontend_network_rx.source-time.json",
+      "bytes": 15525,
+      "sha256": "f3d2e99e65cd0f1dd9bab3bc64e5b79080fb7042b15f620ab2819f160670960f"
+    },
+    {
+      "path": "raw/frontend_network_tx.json",
+      "bytes": 15206,
+      "sha256": "6ecc2243c40c6ac9f3a7a920c3ea087500eff851c11d5eb3ce582100f3f9af0b"
+    },
+    {
+      "path": "raw/frontend_network_tx.series.json",
+      "bytes": 2087,
+      "sha256": "047c800eadf20e576ef8978ea83b0a709733ad00937f9c32a1a3b654d46f92c8"
+    },
+    {
+      "path": "raw/frontend_network_tx.source-time.json",
+      "bytes": 15526,
+      "sha256": "62caf0c48b2862f5b9ff08735bb77fc9508d952c846f106374555515168fb612"
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.json",
+      "bytes": 14535,
+      "sha256": "346192b534d9a46a6a68e063618e9210fc1ea73b60b494f8402bb1399e04c4fd"
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.series.json",
+      "bytes": 2277,
+      "sha256": "87b12c24f14a15eed4f954708bdcb60c052d986871036eeae819bb396130da35"
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.source-time.json",
+      "bytes": 15563,
+      "sha256": "d574ecdf56f24ada119426ec0228b76e62c24856600c0b855bf1a410621b6079"
+    },
+    {
+      "path": "raw/paymentservice_http_errors.json",
+      "bytes": 613,
+      "sha256": "6ef31c1cab6c171ab386d21bf5aa005336621d41ea2aa79008cd8fe328b70d80"
+    },
+    {
+      "path": "raw/paymentservice_http_errors.series.json",
+      "bytes": 479,
+      "sha256": "b7582f97d4b2f22abf310adc15062a1d1807dd1e4555f89288ea91493917130b"
+    },
+    {
+      "path": "raw/paymentservice_http_errors.source-time.json",
+      "bytes": 613,
+      "sha256": "81e15b7aca69dca414c6415f797c4f04089a2c74c6b302d4d91613176e568cb0"
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.json",
+      "bytes": 14115,
+      "sha256": "d428eceb13cca432f48700b18ca2d3502f85cc8b1756336d80f4ea3fe542ebe5"
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.series.json",
+      "bytes": 2237,
+      "sha256": "0ae521b9d9aa8bdfafabc230712ea19bcff454d54920a208dc35762b0a7d8aba"
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.source-time.json",
+      "bytes": 15564,
+      "sha256": "ac0aac03546a9bd144c5d3c1757425bc061013a0ec056a9cf866e7f2617fbf3d"
+    },
+    {
+      "path": "raw/paymentservice_network_rx.json",
+      "bytes": 15245,
+      "sha256": "662b6edb449f78dd43d34de7af2d4dceebdc74042fc80c2f658fe4a17e0765b4"
+    },
+    {
+      "path": "raw/paymentservice_network_rx.series.json",
+      "bytes": 2104,
+      "sha256": "ad46f34253a49154ac5e0b5268edd1b463646339b23270430987f48a146e67d4"
+    },
+    {
+      "path": "raw/paymentservice_network_rx.source-time.json",
+      "bytes": 15517,
+      "sha256": "73181f8b6b85a1f866f1403e419899235f262934139c8a6ebd300a94d6af5e17"
+    },
+    {
+      "path": "raw/paymentservice_network_tx.json",
+      "bytes": 15308,
+      "sha256": "c507d03894da054a81f6963976e045e9cf6efb2caf05731479dbd918ae48c047"
+    },
+    {
+      "path": "raw/paymentservice_network_tx.series.json",
+      "bytes": 2107,
+      "sha256": "108bfc3328a88e240fe479ae2f5a956bf9f0f2d3e501100a14e54350cc545327"
+    },
+    {
+      "path": "raw/paymentservice_network_tx.source-time.json",
+      "bytes": 15518,
+      "sha256": "a87d17ce21d3548f655c64b34854bbdd809fa66ae45dfe7ae1298f21eaccaa0f"
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.json",
+      "bytes": 15856,
+      "sha256": "ba0b7dc23b948a20669c4320366151cee1a7aeabd51db47db037185b77568127"
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.series.json",
+      "bytes": 2310,
+      "sha256": "04c132b00a335bc0e6266d619e5f56d4a0fa8185f9f2eb727ce169a7b7617d5c"
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.source-time.json",
+      "bytes": 15584,
+      "sha256": "4ad336de5f335bfae8406f0ca8028b3b40c24827cc62dd20ca06898b4b5bf21d"
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.json",
+      "bytes": 620,
+      "sha256": "b59db1cd4c7b3842addad3a1ba71da6dd5fc960e96b5f6c36df952a8dc690eba"
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.series.json",
+      "bytes": 486,
+      "sha256": "647394440ea12179729afe137d9809cfb8c5d36bbbcbf1a54e94ff3089f2cc7d"
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.source-time.json",
+      "bytes": 620,
+      "sha256": "204290a3a222288295abbca7a455cf0fc9db5f4ca8563288bf74284b3b4d4e92"
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.json",
+      "bytes": 13952,
+      "sha256": "c7f97264d95f94a1ea410efed4d5d9b94a903f8cdbbbfefcca671fc61ee1153a"
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.series.json",
+      "bytes": 2270,
+      "sha256": "0db720ea338a171387ca94a5f8f973e914e000667fd2ee3de172acfb17ec7004"
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.source-time.json",
+      "bytes": 15585,
+      "sha256": "b77e2c3fccabbd67d1136b9f08836801ac1ffb477c1599cbb9fa3ede60a3d669"
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.json",
+      "bytes": 15698,
+      "sha256": "f80e042b6f5a4336f9ee4480e7846aedcc2459fd74ddb276a3bb346a1e0bf13c"
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.series.json",
+      "bytes": 2123,
+      "sha256": "416b838edaeab07b23e9a24087e426034c2532f42504aa931f97caf6c557d4bf"
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.source-time.json",
+      "bytes": 15534,
+      "sha256": "e7c5fc460f57bf67d4dc7d7222616878b69a09a39afb8268adc04fb45a35674c"
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.json",
+      "bytes": 15693,
+      "sha256": "67ed707f4a35835139b0cc0952111512fb9ef42e486ea73e0bf1bfea0c2460a5"
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.series.json",
+      "bytes": 2126,
+      "sha256": "b67a4e6474c2d8066ce5ba1b945a8da0ad5edc7722102e00f7e5cc2260e51838"
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.source-time.json",
+      "bytes": 15535,
+      "sha256": "667f3a5bf2cedb8d63e81e324502e9c778a60fdac9837a7624696bc41fed1e4a"
+    },
+    {
+      "path": "raw/prometheus-buildinfo.json",
+      "bytes": 760,
+      "sha256": "1d9bba85ef70afa8a59a6ced22d4f5054ab5371cbc243e1d1a36d4b3b3580ab6"
+    },
+    {
+      "path": "raw/prometheus-config.json",
+      "bytes": 143398,
+      "sha256": "9e38707baeffd0ae17c908546fbad1ed7e0065a08dc7c99523da8eac683ddac2"
+    },
+    {
+      "path": "raw/prometheus-targets.json",
+      "bytes": 5176119,
+      "sha256": "0c649f83d2703e3a66adf57b5d7611628103b8c515585fc38a72f3314d1ceb1a"
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.json",
+      "bytes": 15020,
+      "sha256": "2328bab2158bffe0ad1bc7eb23880f1fb07a46cea9bd51715861d90481f1ff13"
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.series.json",
+      "bytes": 2308,
+      "sha256": "c337ff67c4f1d2325d5845e03b4557399da3b08ee909b7d12515a65039c2dd0b"
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.source-time.json",
+      "bytes": 15548,
+      "sha256": "135e08ffb2ca73e19abbf1cf93cad6b553727145c29f28a40d0d82dc5344885d"
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.json",
+      "bytes": 620,
+      "sha256": "5a4f5d6206ecc566fca28501e3dbd607ae2487bcd95f731305509bc0086d0cd0"
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.series.json",
+      "bytes": 486,
+      "sha256": "b232370dc6986191105dc3c1aa4538ce5424e1c92bd11e9e8e44f1455609a017"
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.source-time.json",
+      "bytes": 620,
+      "sha256": "8f49acc74c5b05925737547f3c6ef9860e7115c29cb675e528442b9fa615416b"
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.json",
+      "bytes": 14122,
+      "sha256": "f4b1f7589ae4a050b8bdd621c9bc113678aca1c951adc5e62c7af3c637d87464"
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.series.json",
+      "bytes": 2268,
+      "sha256": "21812caf7f9895496687c186e7dff927de9a8caa6bd66cd90287e55d1588008e"
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.source-time.json",
+      "bytes": 15549,
+      "sha256": "73c848a22e5d6f35efa4603187bbc6edfe19ea0a2297b279235633af88614da1"
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.json",
+      "bytes": 14198,
+      "sha256": "1e6818053385e151fe9ec65d9ba90acc02fb80cc3cb643116333b6fa94c6ee8d"
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.series.json",
+      "bytes": 2121,
+      "sha256": "ca64e4b0d850af4c1e9858a39ac1df0288f50cbb8df7cf8e999dfa7bacf46054"
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.source-time.json",
+      "bytes": 15550,
+      "sha256": "1f8d431134e2a1ec36322768bec9ca5bd841cf7f592c0bba2e7b912908fbd9eb"
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.json",
+      "bytes": 14271,
+      "sha256": "a765cc5354bc00338b8b9a54f6d8edb6c9849e5a29106a7b22978c3133de3cb9"
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.series.json",
+      "bytes": 2124,
+      "sha256": "1f673a4602314db507341e27f45c02e412812caddc01a8fadbca2f747e7f03bb"
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.source-time.json",
+      "bytes": 15551,
+      "sha256": "0903a399bd5aa142d32f7465044ce7b2ab9ccbda469dd289ee57ab56741c28b1"
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.json",
+      "bytes": 1040,
+      "sha256": "4bd0bbf435fa0f7a29391fe6d0a346efd08cb3c502d93edf1ebaad2fd4ee9643"
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.series.json",
+      "bytes": 969,
+      "sha256": "245a2c3cd6d9bdec7575bf357c7381d7b90c30600a8982528e02427582dbcd2b"
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.source-time.json",
+      "bytes": 1036,
+      "sha256": "cab6d512b55fc58f8b3a19633fc6ba455bd54a88006394ef531812481288d933"
+    },
+    {
+      "path": "raw/redis-cart_http_errors.json",
+      "bytes": 846,
+      "sha256": "6f6904d77a65a7fdcd30eee2ea9c881c73bf2d9e026d5b1878cf19f17026bcd8"
+    },
+    {
+      "path": "raw/redis-cart_http_errors.series.json",
+      "bytes": 775,
+      "sha256": "03eef0fd25f282d85a5274559ac8a3899eddff9813f93eb18c33a817cac8c7a4"
+    },
+    {
+      "path": "raw/redis-cart_http_errors.source-time.json",
+      "bytes": 842,
+      "sha256": "6746afd4aa035c7db98ad02abe6dbd4738957b1184519028e80d6421d868c12e"
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.json",
+      "bytes": 1012,
+      "sha256": "9aab1b457b375526f75c2b9d1b81a81f9b5704a82f0f09e2aa2afca8f5ddf16e"
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.series.json",
+      "bytes": 971,
+      "sha256": "2545bd3175977e19631213afa0a6b371ddd86f5b5ecb36403a2810de751652d7"
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.source-time.json",
+      "bytes": 1038,
+      "sha256": "2c2308aa8b64d424f8297ab654e16c0e9a4463a56127129f9568dafe0c34ce38"
+    },
+    {
+      "path": "raw/redis-cart_network_rx.json",
+      "bytes": 1006,
+      "sha256": "dea4123fd5e0b11db8b1afb0046f3e33184ea38ddc8b1744b597c57ff3607be9"
+    },
+    {
+      "path": "raw/redis-cart_network_rx.series.json",
+      "bytes": 935,
+      "sha256": "8e5d5347fd3ae6bbd8a032d49e2a57671a4275b955c772b2d59539018797bdda"
+    },
+    {
+      "path": "raw/redis-cart_network_rx.source-time.json",
+      "bytes": 1002,
+      "sha256": "637c247d7e96c50efdf1e38909b4b375d5dafe9d613b6f799584ec759bfdbed7"
+    },
+    {
+      "path": "raw/redis-cart_network_tx.json",
+      "bytes": 1008,
+      "sha256": "f24f74a3dc84f2f879147f4cd55f9470c27b028d799530285abd280f76a9dcb5"
+    },
+    {
+      "path": "raw/redis-cart_network_tx.series.json",
+      "bytes": 937,
+      "sha256": "3c8e373fdff6051f320b86ee0f52721fdfdf59589b85555fe6e72d5075ac621e"
+    },
+    {
+      "path": "raw/redis-cart_network_tx.source-time.json",
+      "bytes": 1004,
+      "sha256": "55e2c1d4c26c70e67a6cbb7b50292578cc672d987ee2ac43ab8b736d2d5b3ca2"
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.json",
+      "bytes": 15738,
+      "sha256": "55323d4155ef76897064fec2b0e58dfcaaf45a54ba3af3b37684aec3a33031d6"
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.series.json",
+      "bytes": 2280,
+      "sha256": "17a95325162f7d86d3b2d53365f14c193b8817dffd5f8d25a4a819608925e185"
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.source-time.json",
+      "bytes": 15540,
+      "sha256": "14126ccc8c305de376356a32073c9c49f4a0056eb9599dc7de2cbf423fe86987"
+    },
+    {
+      "path": "raw/shippingservice_http_errors.json",
+      "bytes": 614,
+      "sha256": "6742ad3d1b7c5caa4f8b6f689964cd7832ae53d09a895007a7a9c8e0a29ee84d"
+    },
+    {
+      "path": "raw/shippingservice_http_errors.series.json",
+      "bytes": 480,
+      "sha256": "238ce6c426c6077c6011d1fe26e27b00e8ab1d7b864af3d452cded9175298c9d"
+    },
+    {
+      "path": "raw/shippingservice_http_errors.source-time.json",
+      "bytes": 614,
+      "sha256": "f77345e67026a2ec3d90aa4d5c54ba31546d1df1f959bdaaba1521dd864f8918"
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.json",
+      "bytes": 13874,
+      "sha256": "cc1ef01d3789d03c320b7b312201fe63ce7ee26b01319213114bcf09e311e77f"
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.series.json",
+      "bytes": 2240,
+      "sha256": "8ba088265539cf886161f12da7fdbe6bdc13df262dec7bc59be25914912eadc0"
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.source-time.json",
+      "bytes": 15541,
+      "sha256": "5497b6bdd8ee3c318b47dcb62e6edfd804e9342504ff8024ca6834aab1b2bbeb"
+    },
+    {
+      "path": "raw/shippingservice_network_rx.json",
+      "bytes": 14118,
+      "sha256": "c21d4d80ae49a9e3a1d9820c659835b213bb974e8ddef6c40f2f544c9227a55c"
+    },
+    {
+      "path": "raw/shippingservice_network_rx.series.json",
+      "bytes": 2105,
+      "sha256": "53b2874e4a3b9ed89b08f545085dad2ae328494ae43c4c83b75a623596c9189e"
+    },
+    {
+      "path": "raw/shippingservice_network_rx.source-time.json",
+      "bytes": 15552,
+      "sha256": "a589820d9c370cd3ba0394b64b1ff2d501a0e01ea90802d828bfeb597b2d7a12"
+    },
+    {
+      "path": "raw/shippingservice_network_tx.json",
+      "bytes": 14175,
+      "sha256": "2e7cdfa4b12bc9b86d7662604c0f30c5e64ebfa3d4a8226f5e0d586b08707bfd"
+    },
+    {
+      "path": "raw/shippingservice_network_tx.series.json",
+      "bytes": 2108,
+      "sha256": "7d5f988f669d4e463fb2de0403d5b1776c3875ffa89ab3e0f8282b14748c9c47"
+    },
+    {
+      "path": "raw/shippingservice_network_tx.source-time.json",
+      "bytes": 15553,
+      "sha256": "d454f421b63ce9f8b1c7dd13a223754503b8057abf6fdb4de7c57f8014f84146"
+    },
+    {
+      "path": "source_times.parquet",
+      "bytes": 55434,
+      "sha256": "33b460e1e7ed0a3293e7d50434fa7c23684ed3e77368303152abdde0fa6ee75f"
+    },
+    {
+      "path": "values.csv",
+      "bytes": 82743,
+      "sha256": "54daa654a99cf3a82e4a459c98c8e6416ce1b5a7f6816794591eb25a5ea185bd"
+    },
+    {
+      "path": "values.parquet",
+      "bytes": 62371,
+      "sha256": "dc9543b48b4d5fae771c0d17407fa32e658affb763b44f94a9d8478e44c33e6a"
+    }
+  ]
+}

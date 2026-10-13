@@ -1,0 +1,32 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_network_transmit_bytes_total{namespace=\"demo-app\",pod=~\"shippingservice-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",interface=\"eth0\"}",
+    "start": 1791684090.0,
+    "end": 1791684690.0
+  },
+  "requested_at": "2026-10-11T02:16:33.712422+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_network_transmit_bytes_total\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod64d27dfa_04f9_461a_80e6_428ca9292755.slice/cri-containerd-7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e.scope\",\"image\":\"registry.k8s.io/pause:3.10\",\"instance\":\"172.18.0.4:10250\",\"interface\":\"eth0\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker\",\"pod\":\"shippingservice-768bf5c46b-nll98\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_network_transmit_bytes_total",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod64d27dfa_04f9_461a_80e6_428ca9292755.slice/cri-containerd-7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e.scope",
+        "image": "registry.k8s.io/pause:3.10",
+        "instance": "172.18.0.4:10250",
+        "interface": "eth0",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "7eae3e1b06973ec28c5780bef30ebc8768271abe7b60f300b87c287c808be79e",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker",
+        "pod": "shippingservice-768bf5c46b-nll98",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:16:33.723440+00:00"
+}

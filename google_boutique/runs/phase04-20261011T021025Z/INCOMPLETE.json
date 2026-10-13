@@ -1,0 +1,671 @@
+{
+  "status": "incomplete",
+  "reason": "System Python 3.14 lacked pyarrow/fastparquet; raw responses and CSV are preserved",
+  "canonical_replacement": "../phase04-20261011T021200Z-audited",
+  "artifacts": [
+    {
+      "path": "raw/adservice_cpu_usage.json",
+      "sha256": "446cf5192a0583e2b4e06fe7a4e5b802293e681fa35de41884d9d7b2f08cbcb4"
+    },
+    {
+      "path": "raw/adservice_cpu_usage.series.json",
+      "sha256": "93812c3fa80ad08cae2187ea077ee0f95cb13373808b3c881f52655a1fe6f7cb"
+    },
+    {
+      "path": "raw/adservice_cpu_usage.source-time.json",
+      "sha256": "c7a3e62b00e6d62ad3f3d1bdf73faa10a0a1ea777a7ed56dec3ebbebe6b502fe"
+    },
+    {
+      "path": "raw/adservice_http_errors.json",
+      "sha256": "48a2893a88e4fff9f74c5a6e49f57f98f5754f43457b04dc5d71733a1c0d2d15"
+    },
+    {
+      "path": "raw/adservice_http_errors.series.json",
+      "sha256": "fb74dc13916d7ae8038be388a17507ea36c4066a627fd939d69a4d214a031366"
+    },
+    {
+      "path": "raw/adservice_http_errors.source-time.json",
+      "sha256": "5bf3890076943772fd4e5441c8127dc801de992bf9de836ebfadac694f4d14c2"
+    },
+    {
+      "path": "raw/adservice_memory_usage.json",
+      "sha256": "5da73c5946ab5157a231deeba17021f349a4dfbedc3cb30192cb7f995e0ae093"
+    },
+    {
+      "path": "raw/adservice_memory_usage.series.json",
+      "sha256": "726c39b8ce287ab6d5b18a2ccc9b472f70f4362de7d8c4d9fa5eabb2577d3207"
+    },
+    {
+      "path": "raw/adservice_memory_usage.source-time.json",
+      "sha256": "7972ee3f64a4fa30de1c7add2d49996fd030b38f5034d11da6ddbf3958c65e0a"
+    },
+    {
+      "path": "raw/adservice_network_rx.json",
+      "sha256": "1edb277094e2210ccbdf00bde87b1340f4b07276afb012bcf51c3403b75b2f18"
+    },
+    {
+      "path": "raw/adservice_network_rx.series.json",
+      "sha256": "fc16bc1e2b46bfc511a646133d7d245989de3264473bb6cf395ccca6792ea423"
+    },
+    {
+      "path": "raw/adservice_network_rx.source-time.json",
+      "sha256": "94845f71124c174985a40e66fbfdf0b2737fe27817d2326d7673bfcd61031423"
+    },
+    {
+      "path": "raw/adservice_network_tx.json",
+      "sha256": "946c791896cb0a399ec43c3ee9026ea0ec51180609f0249213801a16ef86cc7c"
+    },
+    {
+      "path": "raw/adservice_network_tx.series.json",
+      "sha256": "0143b42c3824dcafa2438c14e845f2ee85904c6738e33ccf6eab86e099df4e22"
+    },
+    {
+      "path": "raw/adservice_network_tx.source-time.json",
+      "sha256": "5d87009309c0c739aece7b31ba739b044a34d2ca3d862ce1bc08fa989f66f13c"
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.json",
+      "sha256": "baab1944ef9b55013b3483a78b0734e7b648e7b8e3667c3a65a74e180bf27ac3"
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.series.json",
+      "sha256": "9656fde35ca4ae579ab3da5c67af6951962f6343472ae348724229db82d131b3"
+    },
+    {
+      "path": "raw/cartservice_cpu_usage.source-time.json",
+      "sha256": "cd2da83c201c04eb69a4838a6608f409aa210f2dba9e239a4268047237b0365b"
+    },
+    {
+      "path": "raw/cartservice_http_errors.json",
+      "sha256": "7df2f9afaef1321aefc65562c9beacf6cbc72b2dbab048477ea22754bedbf8b9"
+    },
+    {
+      "path": "raw/cartservice_http_errors.series.json",
+      "sha256": "251ca4dc85f5f81012245f41a36444ab7a4b68a9398a59445c560df1c9d85659"
+    },
+    {
+      "path": "raw/cartservice_http_errors.source-time.json",
+      "sha256": "2440d40f9f6a3701785c394e79378c9ec1464da6adcbb03737de848be1ebe6e4"
+    },
+    {
+      "path": "raw/cartservice_memory_usage.json",
+      "sha256": "747f804984339c27e5a3561b809e2678ef49e5b64bf48cc8a5f9a17ce04025e2"
+    },
+    {
+      "path": "raw/cartservice_memory_usage.series.json",
+      "sha256": "aa314d9e043f8b53b797db1ce7d7ac02e8e404343180a7ee23cc0ca8f45cefdd"
+    },
+    {
+      "path": "raw/cartservice_memory_usage.source-time.json",
+      "sha256": "289b1c7d5f347dac80407d00927da3e77c7b50241b59bbc1598293f9c4811628"
+    },
+    {
+      "path": "raw/cartservice_network_rx.json",
+      "sha256": "fdec1f5c62446c9cc801af86ea05bb84fec5e762b19179f697aad98aeaeb1b83"
+    },
+    {
+      "path": "raw/cartservice_network_rx.series.json",
+      "sha256": "e956d92ea87d18e1a71c7966fe6cc439e356f2f57ecc13840799ea011ff367c8"
+    },
+    {
+      "path": "raw/cartservice_network_rx.source-time.json",
+      "sha256": "00cdf224815dca4169df1e47b916f173e76d3186b370166644ad7bf8eb553e1a"
+    },
+    {
+      "path": "raw/cartservice_network_tx.json",
+      "sha256": "72bff55cd7fbcfd2ae4ec0713fa4ffba4d649e46ce24b09f933272f4a4835b14"
+    },
+    {
+      "path": "raw/cartservice_network_tx.series.json",
+      "sha256": "36042d8f83b073ecf4aa5b08be1f90f72aaa409a1c1e463d4daafec7899a5b42"
+    },
+    {
+      "path": "raw/cartservice_network_tx.source-time.json",
+      "sha256": "b60ab6d4fea7e2c6b3ab875bc2d12109b5140ee840186a138e6a169d22717822"
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.json",
+      "sha256": "e3f47b897eb9abf35ddf85638c582e53cb375ed370a879967688f00fb647ff65"
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.series.json",
+      "sha256": "e8ac9dc098444e5485ee38884a15c01651be3ca22da8d791a83b515e10d5d0c8"
+    },
+    {
+      "path": "raw/checkoutservice_cpu_usage.source-time.json",
+      "sha256": "879954a5f59247fa2dca19ddc8c390da8f03dad3f921eaf6d92439fb63ad4922"
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.json",
+      "sha256": "b5942fb98b1057f37e443db9e3b4464c9532d3521de72f4a4ec43df96ae77bff"
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.series.json",
+      "sha256": "57209fb8f82fc2ae29a542260815fc8be39587e11399be9dca8e9db0314ae126"
+    },
+    {
+      "path": "raw/checkoutservice_http_errors.source-time.json",
+      "sha256": "dadb817f38fa244935e1a288894db7e0fa73dffa544f4a48cbfcc7140a399d89"
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.json",
+      "sha256": "ce1d1c09b2a1ee20f8d6140c3e9a19361353fac22275f5c04041180aff29719a"
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.series.json",
+      "sha256": "dcee523983cee6d5ed55f11769d21ca74467d2de5593e845ddb904354951beca"
+    },
+    {
+      "path": "raw/checkoutservice_memory_usage.source-time.json",
+      "sha256": "e35908f9936c0c9f055c6d2f56c7ec37216b4034b90736041d054312ec8bd2d5"
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.json",
+      "sha256": "8df6057c4ddfa867076160e8296c88ee9b1f8cee1cb5a592815d29ad098da3ec"
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.series.json",
+      "sha256": "138e7886921a3fbf6b01a0cc78e02161fae1136e904545a198378465d64e86fa"
+    },
+    {
+      "path": "raw/checkoutservice_network_rx.source-time.json",
+      "sha256": "27c694440b0ffacd5ed0ae4c1c98211f95c9fb0cee46c3bc2cc132c6ea60871c"
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.json",
+      "sha256": "1b68112aa4aa989fcecab56c5b4e82de98587007cd2f2eaad5981ba72a7843be"
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.series.json",
+      "sha256": "d531a2e2b4f573c7eb92c706fa0d3744406f5708ed2c30cda8adf69b9820f500"
+    },
+    {
+      "path": "raw/checkoutservice_network_tx.source-time.json",
+      "sha256": "41cfff4473d38f84acad1f85d134c37e2e49a0d8a7b4a63256ef0e6febbbbb9b"
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.json",
+      "sha256": "c9ec84fab4afc1a01f59a7a08d8034b2749aa960f824683bffcd19bd30088125"
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.series.json",
+      "sha256": "6df3e62f8a7017dbce068ac5a362efa622dd26a271aacd8f4fa2360ff5ee6eb0"
+    },
+    {
+      "path": "raw/currencyservice_cpu_usage.source-time.json",
+      "sha256": "ace2a651bb22b2dcc1177f93cedf5c6486bcec6e76b057009ed0b498965e1ea9"
+    },
+    {
+      "path": "raw/currencyservice_http_errors.json",
+      "sha256": "1f763ce31ce6dda6394642e8dfe7327ccbe016d2975b6c5973c4e5ad422cac6c"
+    },
+    {
+      "path": "raw/currencyservice_http_errors.series.json",
+      "sha256": "eee609d5bf496a0c25b1a72af61047bf15609ce30022f8d0f09cfc890db712df"
+    },
+    {
+      "path": "raw/currencyservice_http_errors.source-time.json",
+      "sha256": "e69c2a59b1e756492a06ccebd73cbfa6e68c239cf5bf213aa79d73904d629496"
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.json",
+      "sha256": "9bd1d711beb0b0b6137b749bdcadb3d192f96bc2e70f4af253c09de704cc38c0"
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.series.json",
+      "sha256": "4e3cb4a99ced1d43e483580fdfb594a4e56aba56a8e3ca9927777558b4aff340"
+    },
+    {
+      "path": "raw/currencyservice_memory_usage.source-time.json",
+      "sha256": "c3d53ac7a826909c72f6a1dda2b372785ee94914b06a25e5fa17fa2288640c63"
+    },
+    {
+      "path": "raw/currencyservice_network_rx.json",
+      "sha256": "3e27b986302a3f3dd3b48bdbbb084f30761ccd81c81a1dada4077938f1a4f7f2"
+    },
+    {
+      "path": "raw/currencyservice_network_rx.series.json",
+      "sha256": "6ca7b7f6b5e8e98edfc3c67d3c7ebeac9b89f320dc2a2d76c70d2a94ea4e77fa"
+    },
+    {
+      "path": "raw/currencyservice_network_rx.source-time.json",
+      "sha256": "a30dd565482b58f349323300536a7801235f6bdf9dda2fbe3eab4bb97e9e9448"
+    },
+    {
+      "path": "raw/currencyservice_network_tx.json",
+      "sha256": "e94186b04df3819d149953547483a275134ff0132eaf28a4c5ae9e619cb859a5"
+    },
+    {
+      "path": "raw/currencyservice_network_tx.series.json",
+      "sha256": "6530ca1ebbb137637b4600c320a4f0385c2d0269154bd05b9b7d15a6f674fffe"
+    },
+    {
+      "path": "raw/currencyservice_network_tx.source-time.json",
+      "sha256": "5e59bdb1e9507108a1da82d95ce76302385a40a653deb8df50df9e24f0e362ea"
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.json",
+      "sha256": "b9511390dddafbeb2c60cdb07405aeadc669d9120c8a6a9e4c3774759d9f089f"
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.series.json",
+      "sha256": "ce2e794ebe4d72daabc5d5e845b69f57e4853a4f222bdc56417529b8e5a99164"
+    },
+    {
+      "path": "raw/emailservice_cpu_usage.source-time.json",
+      "sha256": "49b3b2b23010307b0f314cdbb236d74d35a987f3ed1ea884b7ff190fc69af036"
+    },
+    {
+      "path": "raw/emailservice_http_errors.json",
+      "sha256": "b7f78a91594cc36b5ec913498879f159cf34355754167e395ff3a255fb3b2303"
+    },
+    {
+      "path": "raw/emailservice_http_errors.series.json",
+      "sha256": "5d53178da3e0dcc5be2fcddd3f3248fea50da46818f3cca488e43a7e2f560872"
+    },
+    {
+      "path": "raw/emailservice_http_errors.source-time.json",
+      "sha256": "1dd885f5ee8bfd6c1ad7d01c47b68e73c3e1b750f56b36da1301dfe94e05f065"
+    },
+    {
+      "path": "raw/emailservice_memory_usage.json",
+      "sha256": "3cfb6cd5d4c07d00cfab1d68d470e22b18e54338d5dc207d5930440b60a24451"
+    },
+    {
+      "path": "raw/emailservice_memory_usage.series.json",
+      "sha256": "d901dfaa259a86fc53e214dc29055d475995af617fdfd2fef89d15875e94e8f1"
+    },
+    {
+      "path": "raw/emailservice_memory_usage.source-time.json",
+      "sha256": "83f4a8f913da045bd9d3f165d6041a626ba0d8595bf536a71e70c5e5b94e8af7"
+    },
+    {
+      "path": "raw/emailservice_network_rx.json",
+      "sha256": "be776958f7597e9bf00f4a40a23f9da4e20786b281cb9f8fac3085a217bf5956"
+    },
+    {
+      "path": "raw/emailservice_network_rx.series.json",
+      "sha256": "d1b5c2e79393d6e184ee5ee199c1b315f73a3d19e92e57e3b3f12236d542b907"
+    },
+    {
+      "path": "raw/emailservice_network_rx.source-time.json",
+      "sha256": "5fc99be6d664a2640b2ab439e98aaeeaf31698e63a50fb25a40f9a8a59c52e7b"
+    },
+    {
+      "path": "raw/emailservice_network_tx.json",
+      "sha256": "cf6c3ebaaaf9c3150d8c7f9d68494d84093e1ce56e19815cc6090b203158b088"
+    },
+    {
+      "path": "raw/emailservice_network_tx.series.json",
+      "sha256": "2722e75da8f5376c79e7b026023cd4c9d8feee09874d6b991a136fd57ca3adfd"
+    },
+    {
+      "path": "raw/emailservice_network_tx.source-time.json",
+      "sha256": "dc29a26208e02f2ef56f88b8199ccafd420d31dd656c2a3dd2cc91c1f69f5bc5"
+    },
+    {
+      "path": "raw/frontend_cpu_usage.json",
+      "sha256": "bf6e46e073560c85d0a0ef6203696d478f15a8791807a85974472cf54afecd67"
+    },
+    {
+      "path": "raw/frontend_cpu_usage.series.json",
+      "sha256": "85a2c718faa73e64f9ba64e28b58629867f4109fb5f41049ae0ce6aec7433cc6"
+    },
+    {
+      "path": "raw/frontend_cpu_usage.source-time.json",
+      "sha256": "f9f2833f02b3da47ac6984ad62d3dd4b5908a400e025e3d0bd61754aa98c2ac2"
+    },
+    {
+      "path": "raw/frontend_http_errors.json",
+      "sha256": "f8b3d56739db49871ab57103040a739e728e5fb84609eeee3f3e4b2f9bb5f081"
+    },
+    {
+      "path": "raw/frontend_http_errors.series.json",
+      "sha256": "e943002483d1d4fbf6d9cc4a0b31efca0eef9860f4821211422ac93680469791"
+    },
+    {
+      "path": "raw/frontend_http_errors.source-time.json",
+      "sha256": "61383e681fa527fe6ce27e6532fd06a42709f8638bf9f610ebcccdfe039e36f8"
+    },
+    {
+      "path": "raw/frontend_memory_usage.json",
+      "sha256": "af3ed7bd83e7dfa770cb284158a7a8764cdf9e78433b1852d416510f2299f61b"
+    },
+    {
+      "path": "raw/frontend_memory_usage.series.json",
+      "sha256": "b6d473a995ecc339868253d08def5708e809fa91683051064c54822c1692d010"
+    },
+    {
+      "path": "raw/frontend_memory_usage.source-time.json",
+      "sha256": "d260da06cd79fb7ad880af42f83eb1fd7168fd21647ff7a5717a26e8a36459d5"
+    },
+    {
+      "path": "raw/frontend_network_rx.json",
+      "sha256": "f56df6e5d2f846546829c18e45d8240977458b7711bc2871736fe6111a418a00"
+    },
+    {
+      "path": "raw/frontend_network_rx.series.json",
+      "sha256": "ef0bddce893c8708fdade29e75a11b7f6b5e7ef558445f924942bdb6bf7d91ea"
+    },
+    {
+      "path": "raw/frontend_network_rx.source-time.json",
+      "sha256": "93e257d2f83d18a7ff4403783e2693ad36ec34c4d152cb6de1c05ba4a1a29f8d"
+    },
+    {
+      "path": "raw/frontend_network_tx.json",
+      "sha256": "7cd55a54f171bbe6c0f7389d52d9c359c29519fd56da92562d763290175c367f"
+    },
+    {
+      "path": "raw/frontend_network_tx.series.json",
+      "sha256": "097bfa156d3424bb4d78757c3ecaf65c39811b1804edba91fd9b58f8c696c4af"
+    },
+    {
+      "path": "raw/frontend_network_tx.source-time.json",
+      "sha256": "c837e176021309a63b0ccee2bef3038d8200d348e50bc0fa501ebc46866f60bf"
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.json",
+      "sha256": "e353803be8fdb672f5e17c72ec053c638997d1b3630fc77df8b3118e2266a557"
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.series.json",
+      "sha256": "96919a0a4e68a9df8a9ff3927cf847bb1c7f6be3f5db6c076cc95554fb6bb99d"
+    },
+    {
+      "path": "raw/paymentservice_cpu_usage.source-time.json",
+      "sha256": "238f7befcfc5769867f6de3fde29d042df90404f9046529420d029945d08fb2f"
+    },
+    {
+      "path": "raw/paymentservice_http_errors.json",
+      "sha256": "9560d72557855207d9467d30db1c6a7115c989b40a87e9b1ad1abefd131e0906"
+    },
+    {
+      "path": "raw/paymentservice_http_errors.series.json",
+      "sha256": "f2f3520385dc572300debe7302892ec1594ca8d083d72660b4a8888392d2fdf0"
+    },
+    {
+      "path": "raw/paymentservice_http_errors.source-time.json",
+      "sha256": "dbea8fc99c0edb488b33af1d8447fc1698234c9c273442a203edc19be25e3e48"
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.json",
+      "sha256": "5879b0e10e3867b8c32c92cdd21d00718230717bd3a167ee465858dd653aec3f"
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.series.json",
+      "sha256": "6a0defd0f46d9a8d4d957fdf25e2af17d5836cc9b420024d0cfb5d3e965f5887"
+    },
+    {
+      "path": "raw/paymentservice_memory_usage.source-time.json",
+      "sha256": "94583826338c2782e57b8d8b8b1a2c4b01e3e113c839b34eadf8d5c3fcd20f79"
+    },
+    {
+      "path": "raw/paymentservice_network_rx.json",
+      "sha256": "b9aa1bbc5c4d5250ce19f26a94d845147d6b279fa90153e0f502f3f489dc6fb7"
+    },
+    {
+      "path": "raw/paymentservice_network_rx.series.json",
+      "sha256": "8da67507172791ee90ad5697521e4a1e3714e3abc2f12984b91d2823bda970e0"
+    },
+    {
+      "path": "raw/paymentservice_network_rx.source-time.json",
+      "sha256": "47f437deb4b804cc262f01306bb5018b55673b31e5fdd58f795ff9fa596a9266"
+    },
+    {
+      "path": "raw/paymentservice_network_tx.json",
+      "sha256": "a8a894543abfd1ce2a4153e401d9aa6817eff0b2ad52a1e86f75ebf50536be68"
+    },
+    {
+      "path": "raw/paymentservice_network_tx.series.json",
+      "sha256": "84eb5d50913b124926d506409cd543fd8af572ff0e376f4bb21536502f715216"
+    },
+    {
+      "path": "raw/paymentservice_network_tx.source-time.json",
+      "sha256": "3dff473bcd81c487d2448b08ce5058cf6c353abeeeb84c08beb317cb1d0271cb"
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.json",
+      "sha256": "53addba9db32381bb32a42828e033bd423d53c803023e2fbc879b3ab8823c95d"
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.series.json",
+      "sha256": "511d5be27e11f6bd89d6427b6728cf4d688583b095da3d904cc5a5800b51bd9a"
+    },
+    {
+      "path": "raw/productcatalogservice_cpu_usage.source-time.json",
+      "sha256": "206f671a3a04a188ab4265bc53d35af762dcc24e585652eeca05249094d18472"
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.json",
+      "sha256": "61646c8565670fcf8eacb61cb17bec6bd3acd87e3df90fa2dad38865bd51cd89"
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.series.json",
+      "sha256": "4432cc9dbc7d2b8230bc931fcf8625f41b7e7b2f9d837d7f2a535c658b7dfff0"
+    },
+    {
+      "path": "raw/productcatalogservice_http_errors.source-time.json",
+      "sha256": "62b2646fa40e6ff32cff25e0303913e63cb2b0ef907a4f6bb25e77a01ce59254"
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.json",
+      "sha256": "89beda9983057993ddc830acb3c32fb4f4993a383ed93673d020cdc0e6b71cac"
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.series.json",
+      "sha256": "3114ae6e766f014e984c52d679fbc0392dd7fc2c1cf4ef53682579305a7f825d"
+    },
+    {
+      "path": "raw/productcatalogservice_memory_usage.source-time.json",
+      "sha256": "eb50e012bebc83541f705dc43c8a99b9daf528cdc018b5ea96de2e196e643168"
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.json",
+      "sha256": "e1ce4995ad502eb306a1ce1b8b95004d58ac53c5467789b791dd601d48f6686f"
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.series.json",
+      "sha256": "4ee29431fcede5e2780b4c6ed15207e9011323869806f3aa4d268a70c15ed590"
+    },
+    {
+      "path": "raw/productcatalogservice_network_rx.source-time.json",
+      "sha256": "3e14fc1a9e4c16dcbee50b970c5ac44a55963e12401b9ce5bfa9e801a67b12d2"
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.json",
+      "sha256": "dbe634f206f6a72e1b1bac9f7426a92697308dea83a9a3aeb7822937e16dc128"
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.series.json",
+      "sha256": "24a1bef0692bba04c1911aa9eb5fdebf50d31fbb1b184951b02ceee17086a0b7"
+    },
+    {
+      "path": "raw/productcatalogservice_network_tx.source-time.json",
+      "sha256": "fd8145f5a3ae0fed92aa1d57fe6b425240c7880fd41829843b7398bd5491f8c0"
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.json",
+      "sha256": "8649ee603f3e1a3e45e58db0e8a7cdc9b6d7dcf98e386a274312c25897506c22"
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.series.json",
+      "sha256": "b1f5d7985ca28e401f449a62be38441693619a8d562d7560c796e4036e808da3"
+    },
+    {
+      "path": "raw/recommendationservice_cpu_usage.source-time.json",
+      "sha256": "702b9e2863057dec4ea30c9b488bbb38ae2a76889694139ec2af8edc4c4aca29"
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.json",
+      "sha256": "c2de766d5a623dbc99f34247784a6d929509c00d8ae45b2d16ef975f887cc42f"
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.series.json",
+      "sha256": "36e397356606b0f0c240fba81cba4363240cbd616650e18a4738a7f9b036bf26"
+    },
+    {
+      "path": "raw/recommendationservice_http_errors.source-time.json",
+      "sha256": "45be2afef9e3cdea69eeba3ea34a9b58808efd0702288e08aec1ca8cd80f2df0"
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.json",
+      "sha256": "9f59a132b01eac5921a0f1fd326c33779618094a05a853a3b45799c10e3487ef"
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.series.json",
+      "sha256": "85d214a3f7d192edb18a84a15ab25b7529e9a862818883776218fd000bfee6a8"
+    },
+    {
+      "path": "raw/recommendationservice_memory_usage.source-time.json",
+      "sha256": "47b6be82a090c46e58d0f2ac31200396e6e68bb673523a4d98c2bd5574819284"
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.json",
+      "sha256": "19ff345e42e6c21dce4de681af57a3dea06d7c779f3c87de1c85b34c2fc803c1"
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.series.json",
+      "sha256": "4573923aaa5a580a1e750329dc0db58a603dca58d9dfeb8ad5d6353e93facab0"
+    },
+    {
+      "path": "raw/recommendationservice_network_rx.source-time.json",
+      "sha256": "2e7016a03ed53049428001a920d4981d72e22bdc9f438ff33eceb1a5f09a476a"
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.json",
+      "sha256": "c71b78529a8f31e2e8fa767c546c4627663d5b706f0493e9eaaf6d407d8859ef"
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.series.json",
+      "sha256": "05f7cf5a76566b9e5d4cbd42c08f867f5190119578408ac6d606a76cae9d3504"
+    },
+    {
+      "path": "raw/recommendationservice_network_tx.source-time.json",
+      "sha256": "5e8d5e76dd5cb02be1266da7c794c01d6b483b89bd5b1b74d9886ce618565d22"
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.json",
+      "sha256": "6ee8867e9c59b4d2b5b9c2ce7c575edf5e6c62354cb751e5ab16cc4d3259f15d"
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.series.json",
+      "sha256": "284c7a7b65baf9fb1f95193c4c433ea678c4befa78cc3bcd3f10332b38989f2c"
+    },
+    {
+      "path": "raw/redis-cart_cpu_usage.source-time.json",
+      "sha256": "abcf29ded918883c1f2053b2a525d5692276dde58e1ded4bcf83ca03af60c28b"
+    },
+    {
+      "path": "raw/redis-cart_http_errors.json",
+      "sha256": "c50f32c50d495dd7eace51a67d164cbbb52f02237a57a82b09a772aa794567c8"
+    },
+    {
+      "path": "raw/redis-cart_http_errors.series.json",
+      "sha256": "d965d4e8bb4c4625f3c70e6ffc4ea3d0445ac3da1978d8b960311da19be0b1be"
+    },
+    {
+      "path": "raw/redis-cart_http_errors.source-time.json",
+      "sha256": "416c638e997517a9955417c893910df5a09b886d212369c7fe3959d46eb5a056"
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.json",
+      "sha256": "3c25f876ed4b5d4606bca30f38e90172be1a0f1afefc42c04f4f0ec989196711"
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.series.json",
+      "sha256": "576f11f4bc7ec6714d18ae2ea3c5fc01d64889af2895d7009a5c3028a7adb2dc"
+    },
+    {
+      "path": "raw/redis-cart_memory_usage.source-time.json",
+      "sha256": "c63aad00cd0cf090d4f462315624fc4efd49c992cdb5ea7041c61dfc8afd2580"
+    },
+    {
+      "path": "raw/redis-cart_network_rx.json",
+      "sha256": "05003b332adf6bc19b8a460222bed3c0b32c22c5f45d783b51f4e50527680241"
+    },
+    {
+      "path": "raw/redis-cart_network_rx.series.json",
+      "sha256": "aac26f38b73f44ba5bc7dd71ae6a3117fd6e6ab20243700b91f79931a8a940a7"
+    },
+    {
+      "path": "raw/redis-cart_network_rx.source-time.json",
+      "sha256": "013e12c3cc439c4a2f64e3b46f353b98efa61b501e05967deedd82ce171307e8"
+    },
+    {
+      "path": "raw/redis-cart_network_tx.json",
+      "sha256": "a4340bb260ace7fe489b76097e1b28ad078526d4a7e6fe55de8e1a87f19a2517"
+    },
+    {
+      "path": "raw/redis-cart_network_tx.series.json",
+      "sha256": "30124b0b8d7bef5bdb8621e46add45b3d61d42939e089cff81e011bb95d6b236"
+    },
+    {
+      "path": "raw/redis-cart_network_tx.source-time.json",
+      "sha256": "394b1e6e7ade37ea9323cda37cba9934358ebf657a2305aa1bef6a5e658bc245"
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.json",
+      "sha256": "9da0d94cd7b00ed40bf1af100e7b0e299f397ca82386b1ca82f8bbe100a3aed7"
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.series.json",
+      "sha256": "e06e6fbffc28105f30cdf1e02f03f36e17e69a4de30a08df9e6fd2cbb7abedfb"
+    },
+    {
+      "path": "raw/shippingservice_cpu_usage.source-time.json",
+      "sha256": "e1f4c51e1d20c4b6fccef351b1c0a6165623b3c1e545883c92748669a2c7c608"
+    },
+    {
+      "path": "raw/shippingservice_http_errors.json",
+      "sha256": "66342e0e41ca91c43aa04378d82c915f408197b6e22870a6760c1f9186fecfb0"
+    },
+    {
+      "path": "raw/shippingservice_http_errors.series.json",
+      "sha256": "8bd1c53738ff1fffda3daa0f9df023bf652b4f6c26b11fb74ae22680414031f2"
+    },
+    {
+      "path": "raw/shippingservice_http_errors.source-time.json",
+      "sha256": "0baa6c4e3be659b9e02cf0efd22f2411a80a3a02a58821b0782d7f88bdd63e38"
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.json",
+      "sha256": "401371292da899863b61c2fad943f3c26effb39b86b6cee9a4f4a1bb574bb0a3"
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.series.json",
+      "sha256": "11173dcd1ae182f2ad5d31714aa72289462c6cb084e183a19233ec7be769acf0"
+    },
+    {
+      "path": "raw/shippingservice_memory_usage.source-time.json",
+      "sha256": "5c85fc2a93d6a97fbb17a9741c1b81c0ab39ddd677f9ee978b66b228df5779dd"
+    },
+    {
+      "path": "raw/shippingservice_network_rx.json",
+      "sha256": "741500ca9f1588d305e5f04c93b181c8258571c6ae67be16790f7a2a10b4044c"
+    },
+    {
+      "path": "raw/shippingservice_network_rx.series.json",
+      "sha256": "2c3f3b9d8c0d938ea655632a6b8d3a546fb0d2538e7425c4a119d1a2ef0582b8"
+    },
+    {
+      "path": "raw/shippingservice_network_rx.source-time.json",
+      "sha256": "4f6fb15a2f86c55c5dacac93e4a7b9efa2fccd435a03f3dec84b2173457789aa"
+    },
+    {
+      "path": "raw/shippingservice_network_tx.json",
+      "sha256": "3159aaa0aaf633aec99044b2b82f44738c305c4b5a63a84525eed7b9e6c6f6ac"
+    },
+    {
+      "path": "raw/shippingservice_network_tx.series.json",
+      "sha256": "d71b63380449326a1d39b3db94c66499b91403e1e5172ad4204ede3e8dedc802"
+    },
+    {
+      "path": "raw/shippingservice_network_tx.source-time.json",
+      "sha256": "e25d799c7de250756787b95e0ca7f7d6da0d7b2c746abd138fa78f7ff9d6723c"
+    },
+    {
+      "path": "values.csv",
+      "sha256": "6ec5c215442b22f9dd5e030c9ab992a47f40c3f88737e110897b24b73d3651ac"
+    }
+  ]
+}

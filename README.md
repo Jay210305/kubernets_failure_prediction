@@ -115,3 +115,18 @@ kubectl port-forward svc/prometheus-grafana -n monitoring 3000:80
 - **Default Username:** `admin`  
 - **Default Password:** `prom-operator`
 
+
+## Telemetry capture and quality audit (Phase 04)
+
+Use the existing project Python environment (`venv`, which includes Parquet support), or provision `google_boutique/requirements.txt` in your chosen environment. The collector defaults to `http://localhost:9090`; pass `--prometheus-url` to match the actual forwarded endpoint. No command overwrites `baseline_run_01`. Exact API/provenance changes are documented in [the Phase 04 audit](docs/telemetry/2026-10-10-phase04.md).
+
+Prepare a filled JSON provenance file from [the capture template](docs/_templates/capture-manifest.json): actual cluster/config revisions, observed workload bounds/evidence, target scrape intervals, and pod/service metadata. `REQUIRED:` placeholders are rejected by the CLI. Start from the repository root, using your recorded UTC capture bounds aligned to five seconds:
+
+```powershell
+.\venv\Scripts\python.exe google_boutique/extract_telemetry.py --start "2026-10-11T02:01:30Z" --end "2026-10-11T02:11:30Z" --output-dir "google_boutique/runs/your-new-run" --prometheus-url "http://127.0.0.1:9095" --provenance "your-filled-provenance.json"
+.\venv\Scripts\python.exe google_boutique/telemetry_quality.py "google_boutique/runs/your-new-run"
+```
+
+Replace the example bounds and paths with your own observed workload interval; historical samples may no longer be retained. A capture exports raw API responses, unfilled values, observed masks, source timestamps, receipt times, source snapshots/dependency versions and hashed manifest. The quality command saves JSON/Markdown and exits 2 when readiness fails. Naive timestamps, existing output directories and incomplete provenance are rejected. The compatibility `extract_dataset` API now treats its output argument as a new directory and retains NaN; tensor construction explicitly selects four primary feature columns and is not performed automatically during capture.
+
+The [canonical Phase 04 run](google_boutique/runs/phase04-20261011T021200Z-audited/QUALITY.md) contains real measurements, but fails the proposed freshness requirement: actual cAdvisor scrapes are ten seconds and source ages exceed ten seconds. HTTP-error series are absent. Historical receipt times do not prove online availability; event-oracle/episode evidence and topology acceptance remain missing. This capture is diagnostic evidence and cannot enable training.

@@ -1,0 +1,58 @@
+{
+  "cluster_context": "kind-aiops-cluster",
+  "cluster_config_revision": "33207fe75c7aa89882307bfd760ba48c3a35abaceff47c60da2839f8472927a5",
+  "cluster_evidence": "google_boutique\\runs\\phase04-20261011T021200Z-evidence",
+  "workload": {
+    "generator": "existing deployment/loadgenerator",
+    "image": "us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/loadgenerator:v0.10.6",
+    "env": [
+      {
+        "name": "FRONTEND_ADDR",
+        "value": "frontend:80"
+      },
+      {
+        "name": "USERS",
+        "value": "10"
+      },
+      {
+        "name": "RATE",
+        "value": "1"
+      }
+    ],
+    "available_replicas": 1,
+    "evidence_paths": [
+      "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\workload_logs.json",
+      "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\deployments.json"
+    ],
+    "verified_start_utc": "2026-10-11T01:52:04.961094452Z",
+    "verified_end_utc": "2026-10-11T02:12:02.152427368Z",
+    "note": "Observed timestamped loadgenerator output brackets capture; configuration is not achieved throughput."
+  },
+  "scrape_interval_evidence": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\targets.json",
+  "prior_baseline_hashes": {
+    "baseline_run_01.csv": "7acdb6a70cca27e5feeec2906f95b73d56ba5a802cbdc01a315480b1d6469d65",
+    "baseline_run_01.parquet": "9b5c3ec34d467f23bdb352edf92e61d43ce507fd8f5771d0dfb8815970cfbce5"
+  },
+  "evidence_artifacts": [
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\deployments.json",
+      "sha256": "8cd0ee3b79e4d924b48c7950ea543acf7fa7915eb6b1b771fe85c47a646d7dee"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\nodes.json",
+      "sha256": "c393ed85f0431239508bfdd969dfb1cd02067c1af7ef24a9f0f40d63b0f8104d"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\pods.json",
+      "sha256": "835c1ac3f61e9d28d18d3956d571e30b3cf124fd50af6f2b3fe1eaa29da35a38"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\targets.json",
+      "sha256": "393b478d9bddf706d6647f1195c4615eefeca224f4bbe75107b8f1f784adc46a"
+    },
+    {
+      "path": "google_boutique\\runs\\phase04-20261011T021200Z-evidence\\workload_logs.json",
+      "sha256": "d290f1f07ae31eac193f4b2b4cb036b4e73651104d3da9a805aca4c6dee5cb6d"
+    }
+  ]
+}

@@ -1,42 +1,44 @@
 ---
 kind: literature-map
-status: initial-screen
-checked: 2026-10-06
+status: evidence-review-awaiting-review
+checked: 2026-10-10
 ---
 
-# Initial map of prior work
+# Prior work navigation
 
-`Bibliografia_Micro/` contains **81 PDFs and 75 distinct SHA-256 file hashes**. This is a focused screen of opening pages and abstracts from 11 selected works, not a full review of every paper or its methods/results. Similar names may be editions rather than byte-identical copies; five exact-hash duplicate groups account for six extra files. Keep original filenames until citations and editions are reconciled.
+The [corpus index](CORPUS_INDEX.md) owns the 81-PDF inventory, 75 distinct hashes, 74 provisional study identities, first-pass screening, edition reconciliation and ranked queue. Original sources are preserved. The local corpus is a starting collection, not a completed systematic search.
 
-## Closest to the proposed task
+Phase 01 and Phase 02 execution outputs are prepared, with human review pending. The [thematic synthesis](LITERATURE_SYNTHESIS.md) owns cross-paper comparison, seven protocol themes, the bounded gap, unresolved Phase 03 choices and [execution/review handoff](LITERATURE_SYNTHESIS.md#execution-checks-and-review-handoff). Detailed claims, physical PDF pages, source hashes and unknowns belong to the notes below.
 
-| Paper in `Bibliografia_Micro/` | What its opening pages establish | Use for this project |
-| --- | --- | --- |
-| [InstantOps](<../Bibliografia_Micro/InstantOps_ A Joint Approach to System Failure Prediction and Root Cause Identification in Microservices Cloud-Native.pdf>) | Joint failure prediction and root-cause analysis using logs, metrics, traces; GNN for spatial structure and GRU for time. | Closest architecture comparison; distinguish its joint objective and modalities from a metrics-first CNN–LSTM. |
-| [Online Failure Prediction for Microservice Architectures](<../Bibliografia_Micro/Online Failure Prediction for Microservice Architectures.pdf>) | Studies how shared-host resource contention affects microservices and online prediction from container metrics. | Motivation for host/pod context and fault mechanisms; inspect full evaluation before citing performance. |
-| [PodFailPred](<../Bibliografia_Micro/PodFailPred_ A New Open-Source Dataset to Train AI Models on Predicting Pod Failures in Kubernetes.pdf>) | Chaos-generated Kubernetes pod-failure dataset; abstract reports 15 injected failure types, 21,374 entries, 38 metrics. | Dataset and labeling design; pod failure is not automatically service-level failure. |
-| [Explainable GNN fault forecasting](<../Bibliografia_Micro/Explainable_GNN-Based_Approach_to_Fault_Forecasting_in_Cloud_Service_Debugging.pdf>) | Graph-based fault-probability forecasting and explanation across service-mesh structures; abstract describes simulated failure behavior. | Alternative spatial representation and interpretability comparison; check whether its target matches an observed lead-time forecast. |
+## Reviewed studies
 
-## Data, observability, and validation
+All twenty queued works have a note: five full decision reviews and fifteen focused methods/evaluation reviews. “Full” covers target, method, evaluation and limits; focused notes record fields not extracted. No paper's experiment was reproduced here. Unlike targets and datasets are not a performance ranking.
 
-| Paper | Opening-page finding | Research question it informs |
-| --- | --- | --- |
-| [Quantifying Data Leakage in Failure Prediction Tasks](<../Bibliografia_Micro/Quantifying Data Leakage in Failure Prediction Tasks.pdf>) | Naive train/test splits can inflate failure-prediction results; paper studies leakage measures and split techniques in HDD prediction. | How to prevent near-identical windows or related episodes crossing splits. Domain differs, principle transfers. |
-| [ServiceAnomaly](<../Bibliografia_Micro/ServiceAnomaly_ An anomaly detection approach in microservices using distributed traces and profiling metrics.pdf>) | Builds an annotated service graph from traces and profiling metrics for anomaly detection. | How to source a verified call graph; its outcome is detection, not advance failure prediction. |
-| [Failure analysis using fault-sensitive microservices](<../Bibliografia_Micro/A failure analysis framework to provide pure anomalous data using multi-source data of fault-sensitive microservices.pdf>) | Selects fault-sensitive services/features and aims to reduce mixed normal/anomalous evidence. | Whether all 55 features are necessary and how to audit feature sensitivity. |
-| [MicroFI](<../Bibliografia_Micro/MicroFI_Non-Intrusive_and_Prioritized_Request-Level_Fault_Injection_for_Microservice_Applications.pdf>) | Request-level, non-intrusive fault injection with prioritization. | Design controlled fault episodes and record blast radius; do not infer it generates this project's labels automatically. |
-
-## Adjacent tasks and model baselines
-
-| Paper | Opening-page finding | Boundary |
-| --- | --- | --- |
-| [A Survey of AIOps Methods for Failure Management](<../Bibliografia_Micro/A Survey of AIOps Methods for Failure Management.pdf>) | Organizes failure-management research by intervention window and target problem. | Taxonomy for separating prediction, detection, localization, and mitigation. |
-| [XGBoost anomaly classification](<../Bibliografia_Micro/Classification_of_Anomalies_in_Microservices_Using_an_XGBoost-Based_Approach_With_Data_Balancing_and_Hyperparameter_Tuning.pdf>) | Uses balancing and hyperparameter tuning for anomaly classification on TraceRCA. | A tabular-model reference, but its reported classification scores are not a forecast benchmark. |
-| [Multilayered Transformer detection/localization](<../Bibliografia_Micro/Multilayered_Fault_Detection_and_Localization_With_Transformer_for_Microservice_Systems.pdf>) | Uses container, service, host, and network layers to detect/localize faults. | Reminder to define observation layer and target layer separately. |
+| Queue rank | Study / evidence note | Review depth | Decision route |
+| ---: | --- | --- | --- |
+| 1 | [InstantOps: A Joint Approach to System Failure Prediction and Root Cause Identification in Microservices Cloud-Native Applications](papers/W033-instantops.md) | Full decision review | System forecast versus service event; multimodal graph/GRU comparison |
+| 2 | [Online Failure Prediction for Microservice Architectures](papers/W054-online-failure-prediction.md) | Full decision review | Shared-host context, forecast settings and warm-up |
+| 3 | [PodFailPred: A New Open-Source Dataset to Train AI Models on Predicting Pod Failures in Kubernetes](papers/W057-podfailpred.md) | Full decision review | Pod provenance; unresolved future label and result counts |
+| 4 | [Latent error prediction and fault localization for microservice applications by learning from system trace logs](papers/W040-latent-error-prediction.md) | Full decision review | Completed-trace error versus advance event |
+| 5 | [Quantifying Data Leakage in Failure Prediction Tasks](papers/W058-data-leakage.md) | Full decision review | Chronology/groups and leakage transfer limits |
+| 6 | [Explainable GNN-Based Approach to Fault Forecasting in Cloud Service Debugging](papers/W029-explainable-gnn.md) | Focused methods/evaluation | Simulated topology/probability versus observed telemetry |
+| 7 | [ServiceAnomaly: An anomaly detection approach in microservices using distributed traces and profiling metrics](papers/W064-serviceanomaly.md) | Focused methods/evaluation | Trace-derived graph and path coverage |
+| 8 | [MicroFI: Non-Intrusive and Prioritized Request-Level Fault Injection for Microservice Applications](papers/W045-microfi.md) | Focused methods/evaluation | Request recipes and injection blast radius |
+| 9 | [A failure analysis framework to provide pure anomalous data using multi-source data of fault-sensitive microservices](papers/W001-fault-sensitive-framework.md) | Focused methods/evaluation | Feature/service selection and graph transformations |
+| 10 | [Can We Trust Auto-Mitigation? Improving Cloud Failure Prediction with Uncertain Positive Learning](papers/W019-uncertain-positive-learning.md) | Focused methods/evaluation | Mitigation-censored labels |
+| 11 | [Performance prediction and resource adaptive adjustment for cloud-native microservices](papers/W056-cnn-performance.md) | Focused methods/evaluation | CNN image layout and resource-performance boundary |
+| 12 | [TraceWeaver: Distributed Request Tracing for Microservices Without Application Modification](papers/W070-traceweaver.md) | Focused methods/evaluation | Trace reconstruction prerequisites |
+| 13 | [Classification of Anomalies in Microservices Using an XGBoost-Based Approach With Data Balancing and Hyperparameter Tuning](papers/W022-xgboost-anomalies.md) | Focused methods/evaluation | Tabular baseline; preprocessing/split ambiguity |
+| 14 | [Multilayered Fault Detection and Localization With Transformer for Microservice Systems](papers/W049-multilayer-transformer.md) | Focused methods/evaluation | Observation/target layers and training scaling |
+| 15 | [Resilient Microservice Applications, by Design, and without the Chaos](papers/W059-resilient-microservices.md) | Focused methods/evaluation | Controlled RPC tests and fault provenance |
+| 16 | [To Split or to Merge? Exploring Multi-modal Data Flexibly for Failure Classification in Microservices](papers/W068-agilemfc.md) | Focused methods/evaluation | Failure taxonomy and modality-dependent classification |
+| 17 | [Investigating Performance Overhead of Distributed Tracing in Microservices and Serverless Systems](papers/W036-tracing-overhead.md) | Focused methods/evaluation | Trace overhead and capture conditions |
+| 18 | [A systematic mapping study on observability of microservices-based applications: fundamentals, classifications, and challenges](papers/W005-observability-mapping.md) | Focused methods/evaluation | Modality/tool taxonomy and heterogeneous datasets |
+| 19 | [Observability in Microservices: An In-Depth Exploration of Frameworks, Challenges, and Deployment Paradigms](papers/W053-observability-frameworks.md) | Focused methods/evaluation | Deployment/coverage limitations |
+| 20 | [A Survey of AIOps Methods for Failure Management](papers/W004-aiops-taxonomy.md) | Focused methods/evaluation | Prediction/detection/diagnosis/mitigation timing |
 
 ## Follow-up reading order
 
-1. Read **InstantOps**, **Online Failure Prediction**, and **PodFailPred** in full for target/lead-time definitions, data collection, and evaluation splits.
-2. Read **Quantifying Data Leakage** before designing sliding-window splits.
-3. Read **ServiceAnomaly** and the GNN forecasting paper before fixing the CNN's service layout.
-4. Then screen the remaining corpus by actual research task and modality; create one note per relevant work using [the template](_templates/paper-note.md). Record page numbers for claims and keep reported metrics tied to each paper's dataset and task.
+The [original ranked queue](CORPUS_INDEX.md#ranked-reading-queue) is now covered by the notes above at its stated depth. It remains the provenance of selection, rather than a list of unfinished reviews. Use the [question-to-paper map](CORPUS_INDEX.md#papers-mapped-to-protocol-questions), [synthesis](LITERATURE_SYNTHESIS.md) and [paper-folder contract](papers/CONTEXT.md) to reopen evidence for a particular decision.
+
+Next is the [Phase 03 protocol](project-phases/03-protocol/CONTEXT.md), after the required human evidence review. Additional external search may address the documented service-forecast/operational-metric coverage gap; no claim of comprehensive novelty follows from these twenty local reviews. [PROJECT_SCOPE.md](PROJECT_SCOPE.md) keeps CNN–LSTM primary and owns the proposed event/timing/evaluation boundary.

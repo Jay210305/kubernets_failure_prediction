@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:9095/api/v1/series",
+  "params": {
+    "match[]": "container_cpu_usage_seconds_total{namespace=\"demo-app\",pod=~\"redis-cart-.*\",job=\"kubelet\",metrics_path=\"/metrics/cadvisor\",container!=\"\",container!=\"POD\"}",
+    "start": 1791684090.0,
+    "end": 1791684690.0
+  },
+  "requested_at": "2026-10-11T02:16:40.707447+00:00",
+  "http_status": 200,
+  "body": "{\"status\":\"success\",\"data\":[{\"__name__\":\"container_cpu_usage_seconds_total\",\"container\":\"redis\",\"cpu\":\"total\",\"endpoint\":\"https-metrics\",\"id\":\"/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfb66d216_5c26_4fa8_8dd4_3ee4ff622901.slice/cri-containerd-2e7d1c2a70aacfea788fa5e13beb69231d8737fc00c3bb9d92dc069ea3e91e7c.scope\",\"image\":\"docker.io/library/redis:alpine\",\"instance\":\"172.18.0.4:10250\",\"job\":\"kubelet\",\"metrics_path\":\"/metrics/cadvisor\",\"name\":\"2e7d1c2a70aacfea788fa5e13beb69231d8737fc00c3bb9d92dc069ea3e91e7c\",\"namespace\":\"demo-app\",\"node\":\"aiops-cluster-worker\",\"pod\":\"redis-cart-788fbddc7-t87rv\",\"service\":\"prometheus-kube-prometheus-kubelet\"}]}",
+  "payload": {
+    "status": "success",
+    "data": [
+      {
+        "__name__": "container_cpu_usage_seconds_total",
+        "container": "redis",
+        "cpu": "total",
+        "endpoint": "https-metrics",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podfb66d216_5c26_4fa8_8dd4_3ee4ff622901.slice/cri-containerd-2e7d1c2a70aacfea788fa5e13beb69231d8737fc00c3bb9d92dc069ea3e91e7c.scope",
+        "image": "docker.io/library/redis:alpine",
+        "instance": "172.18.0.4:10250",
+        "job": "kubelet",
+        "metrics_path": "/metrics/cadvisor",
+        "name": "2e7d1c2a70aacfea788fa5e13beb69231d8737fc00c3bb9d92dc069ea3e91e7c",
+        "namespace": "demo-app",
+        "node": "aiops-cluster-worker",
+        "pod": "redis-cart-788fbddc7-t87rv",
+        "service": "prometheus-kube-prometheus-kubelet"
+      }
+    ]
+  },
+  "received_at": "2026-10-11T02:16:40.737115+00:00"
+}
